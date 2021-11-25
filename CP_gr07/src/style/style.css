@@ -1,0 +1,61 @@
+/*STYLE FOR THE WEBSITE IN DESKTOP*/
+
+/*PRIMARY CHARACTERISTICS OF THE WEBSITE*/
+
+/*Setting the background color of the whole website*/
+/**/
+html{
+  background-color: #FCF7ED;
+}
+
+#header_home{
+  background-color: #F2D9C3;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: flex;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  flex-wrap: wrap;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
+}
+
+#header_logo_div{
+    justify-content: center;
+    flex-grow: 5;
+}
+
+#logo_ontrip{
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  justify-content: center;
+  align-items: center
+}
+
+#links_header_section{
+    text-align: right;
+    align-self: center;
+    flex-grow: 50;
+}
+
+.links_header{
+    all: unset;
+    color: #3e3e3e;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    font-family: "Segoe UI";
+}
+
+a:hover{
+    text-decoration: underline;
+    transition-duration: 1s;
+}
