@@ -28,13 +28,29 @@ html{
 }
 
 #page_cover_text {
-  text-align:right;
+  text-align:center;
+  margin:30px 100px 80px 430px;
 }
 
 #page_cover_text h1{
-  font-family: Raleway;
+  align-content: center;
+  font-family: "Raleway";
   font-style: italic;
   font-weight: normal;
+  color: rgb(52, 52, 52);
+  font-size: 50px;
+}
+
+#begin_btn{
+  margin-top: 190px;
+  position: relative;
+
+}
+
+#begin_box {
+  margin-right: 50px;
+  float:right;
+  position: absolute;
 }
 
 /* header{
