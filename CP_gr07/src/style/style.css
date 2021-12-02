@@ -7,6 +7,45 @@
 html{
   background-color: #FCF7ED;
 }
+/* The follwing section will define the styling for the cover page */
+#page_cover{
+  position:fixed;
+  background: url("../images/coverMountain.jpeg") no-repeat;
+  background-size: cover;
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+}
+
+#cover_logo{
+  margin: 10px;
+}
+
+#cover_logo img{
+  max-width: 80px;
+  margin:auto;
+}
+
+#page_cover_text {
+  text-align:right;
+}
+
+#page_cover_text h1{
+  font-family: Raleway;
+  font-style: italic;
+  font-weight: normal;
+}
+
+/* header{
+  width: 100%;
+  height: auto;
+} */
+
+/* body{
+  width: 100%;
+  height: 100%;
+} */
 
 #header_home{
   background-color: #F2D9C3;
@@ -25,10 +64,10 @@ html{
 
 #header_logo_div{
     justify-content: center;
-    flex-grow: 5;
+    flex-grow: 4;
 }
 
-#logo_ontrip{
+.logo_ontrip{
   max-width: 80px;
   max-height: 80px;
   width: 100%;
@@ -43,7 +82,15 @@ html{
     text-align: right;
     align-items: center;
     align-self: center;
-    flex-grow: 50;
+    flex-grow: 55;
+}
+
+#link_Home{
+    display: none;
+}
+
+#link_MyProfile{
+    display: none;
 }
 
 .links_header{
@@ -71,7 +118,7 @@ html{
 #search_div{
     align-self: center;
     flex-grow: 3;
-    margin-left: 50px;
+    margin-left: 5%;
 }
 
 #search_input{
@@ -81,4 +128,88 @@ html{
     border-radius: 5px;
     padding: 10px;
     margin-left: 5px;
+}
+
+footer{
+    background-color: #464232;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#links_footer_div{
+    display: flex;
+    flex-grow: 4;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+    margin: 15px;
+}
+
+.links_footer{
+    all:unset;
+    color: white;
+    text-decoration: underline;
+    letter-spacing:1px;
+    margin-top: 2px;
+}
+
+#icons_footer{
+    flex-grow: 4;
+    padding: 5px;
+    align-items: right;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.fa-instagram{
+    all: unset;
+    color:white;
+    margin-right: 5px;
+
+
+
+}
+
+.fa-facebook-f{
+    all: unset;
+    color:white;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.fa-twitter{
+    all: unset;
+    color:white;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.fa-pinterest-p{
+    all: unset;
+    color:white;
+    margin-left: 5px;
+    margin-right: 10px;
+
+}
+
+#title_footer{
+    margin: 5px;
+    margin-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#text_footer{
+    font-family: "Abhaya Libre";
+    color:white;
+    font-size: 20px;
+    justify-content: center;
 }
