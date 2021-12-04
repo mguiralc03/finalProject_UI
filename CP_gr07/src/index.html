@@ -29,53 +29,93 @@
             <a class="fa fa-ellipsis-v fa-2x"></a>
         </header>
 
+        <div id = "filter_section">
+            <div class = "filter_input"id = "range">
+                <p id = "range_title">Maximum budget</p><p> 0$ </p>
+                <div id = "range_bar">
+                  <input id = "price_bar" type="range" value = "5000" min = "0" max = "5000" oninput="this.nextElementSibling.value = this.value">
+                  <output>5000</output>
+                </div>
+                <p>5000$</p>
+            </div>
+            <input class = "filter_input" id = "place" type="text" placeholder="Place">
+            <select class = "filter_input" id = "preferences">
+                <option value="default">Preferences</option>
+                <option value="mountain">Mountain</option>
+                <option value="summer">Summer</option>
+                <option value="forest">Forest</option>
+                <option value="beach">Beach</option>
+                <option value="spring">Spring</option>
+                <option value="winter">Winter</option>
+            </select>
+            <input class = "filter_input" id = "submit_btn" type= "submit" value = "Apply">
+        </div>
+
         <div id = "home_images">
-            <div class="gallery">
+            <div class="gallery desert 2000">
                 <a target="_blank" href="./images/desierto.jpg">
                   <img src="./images/desierto.jpg" alt="Desert" width="400" height="250">
                 </a>
-                <a class="material-icons-outlined" id = "like1">favorite_border</a>
-                <a class="material-icons-outlined" id = "filled_like1">favorite</a>
+                <div class = "bottom-photos">
+                    <a class="material-icons-outlined" id = "like1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like1">favorite</a>
+                    <p class="usertag"> @user1 </p>
+                </div>
             </div>
 
-            <div class="gallery">
+            <div class="gallery forest 0 EEUU ">
               <a target="_blank" href="./images/autumwalk_home.jpg">
                 <img src="./images/autumwalk_home.jpg" alt="autumwalk" width="400" height="250">
               </a>
-              <a class="material-icons-outlined" id = "like2">favorite_border</a>
-              <a class="material-icons-outlined" id = "filled_like2">favorite</a>
+              <div class = "bottom-photos">
+                  <a class="material-icons-outlined" id = "like2">favorite_border</a>
+                  <a class="material-icons-outlined" id = "filled_like2">favorite</a>
+                  <p class="usertag"> @user5 </p>
+              </div>
             </div>
 
             <div class="gallery">
                 <a target="_blank" href="./images/lavanda.jpg">
                   <img src="./images/lavanda.png" alt="lavander" width="400" height="250">
                 </a>
-                <a class="material-icons-outlined" id = "like3">favorite_border</a>
-                <a class="material-icons-outlined" id = "filled_like3">favorite</a>
+                <div class = "bottom-photos">
+                    <a class="material-icons-outlined" id = "like3">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like3">favorite</a>
+                    <p class="usertag"> @user3 </p>
+                </div>
             </div>
 
             <div class="gallery">
                 <a target="_blank" href="./images/molino.jpg">
                   <img src="./images/molino.jpg" alt="windmill" width="400" height="250">
                 </a>
-                <a class="material-icons-outlined" id = "like4">favorite_border</a>
-                <a class="material-icons-outlined" id = "filled_like4">favorite</a>
+                <div class = "bottom-photos">
+                    <a class="material-icons-outlined" id = "like4">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like4">favorite</a>
+                    <p class="usertag"> @user2 </p>
+                </div>
             </div>
 
             <div class="gallery">
                 <a target="_blank" href="./images/mountain_home.jpg">
                   <img src="./images/mountain_home.jpg" alt="mountain" width="400" height="250">
                 </a>
-                <a class="material-icons-outlined" id = "like5">favorite_border</a>
-                <a class="material-icons-outlined" id = "filled_like5">favorite</a>
+                <div class = "bottom-photos">
+                    <a class="material-icons-outlined" id = "like5">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like5">favorite</a>
+                    <p class="usertag"> @user1 </p>
+                </div>
             </div>
 
             <div class="gallery">
                 <a target="_blank" href="./images/village-home.jpg">
                   <img src="./images/village-home.jpg" alt="village" width="400" height="250">
                 </a>
-                <a class="material-icons-outlined" id = "like6">favorite_border</a>
-                <a class="material-icons-outlined" id = "filled_like6">favorite</a>
+                <div class = "bottom-photos">
+                    <a class="material-icons-outlined" id = "like6">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like6">favorite</a>
+                    <p class="usertag"> @user7 </p>
+                </div>
             </div>
         </div>
 
@@ -83,7 +123,6 @@
             <div id = "links_footer_div">
                 <a class = "links_footer" id = "link_T&C" href = "">Terms and conditions</a>
                 <a class = "links_footer" id = "link_privacy" href = "">Policy of privacy</a>
-
             </div>
             <div id ='title_footer'>
                 <p id = text_footer > ONTRIP </p>
@@ -97,6 +136,10 @@
 
             </div>
         </footer>
+        <script src="https://unpkg.com/jquery/dist/jquery.js"></script>
+        <script src="https://unpkg.com/image-map/dist/image-map.jquery.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+        <script src="./script/script.js"> </script>
     </body>
 
 </html>

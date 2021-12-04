@@ -140,6 +140,10 @@ header{
     margin-left: 5%;
 }
 
+.fa-search{
+    cursor: pointer;
+}
+
 #search_input{
     all: unset;
     background-color: rgba(255, 255, 255, 0.81);
@@ -149,46 +153,187 @@ header{
     margin-left: 5px;
 }
 
+/* Filters section style*/
+#filter_section{
+  width: 100%;
+  height: 10%;
+  display: none;
+  padding-left: 3px;
+  padding-right: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid rgba(242, 217, 195, 0.3);
+  box-sizing: border-box;
+  background-color: rgba(242, 217, 195, 0.5);
+}
+
+/* Filter budget */
+#range_title{
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+#range_bar{
+    display:flex;
+    flex-direction: column;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 250px;
+    height: 7px;
+    background: rgba(200, 187, 174, 0.69);
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: rgb(153, 136, 121);
+    margin-top: -3px;
+}
+
+
+#range{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5px;
+    padding-right: 25px;
+    text-align: center;
+    align-items: baseline;
+}
+
+#place{
+    all:unset;
+    background: rgba(255, 255, 255, 0.8);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 25px;
+    width: 13%;
+}
+
+#preferences{
+    padding-right: 5px;
+    padding-left: 10px;
+    text-align: center;
+    border: none;
+    align-items: center;
+}
+
+#submit_btn{
+    border-color: rgb(153, 136, 121);
+    color: rgb(153, 136, 121);
+    font-weight: bold;
+    border-style: solid;
+    height: 35px;
+    align-self: center;
+    padding-left: 20px;
+    padding-right: 25px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#submit_btn:hover{
+    background: rgb(153, 136, 121);
+    color: white;
+}
+
+.filter_input{
+    background: rgba(255, 255, 255, 0.8);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
 /*Image gallery style */
 
 #home_images{
-    margin: 0;
     margin-top: 20px;
+    margin-bottom: 20px;
     padding: 0;
-    width: 96%;
-    margin-left: 3%;
-    margin-right: 2%;
+    width: 100%;
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .gallery {
-  margin: 15px;
-  border: 1px solid #ccc;
-  position: relative;
-  float: left;
-  width: 17%;
-  justify-content: center;
-  align-items: center;
-
+    margin: 15px;
+    position: relative;
+    width: 16%;
+    justify-content: center;
+    align-items: center;
 }
 
 .material-icons-outlined{
     cursor: pointer;
+    position: absolute;
+    right: 0;
 }
 
-.gallery:hover {
-  border: 1px solid #777;
+#filled_like1{
+    display: none;
+}
+
+#filled_like2{
+    display: none;
+}
+
+#filled_like3{
+    display: none;
+}
+
+#filled_like4{
+    display: none;
+}
+
+#filled_like5{
+    display: none;
+}
+
+#filled_like6{
+    display: none;
 }
 
 .gallery img {
-  object-fit: cover;
-  width: 100%;
+    object-fit: cover;
+    border: 2px solid #FCF7ED;
+    width: 100%;
+}
 
+.gallery img:hover {
+    border: 2px inset rgba(41, 27, 22, 0.88);
+}
+
+.bottom-photos{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usertag{
+    left: 0;
+    position: absolute;
 }
 
 .desc {
-  padding: 15px;
-  text-align: center;
+    padding: 15px;
+    text-align: center;
 }
 
 /* Footer style */
@@ -329,19 +474,20 @@ footer{
     .gallery{
         width: 21%;
     }
+
 }
 
 @media  only screen and (max-width: 1000px){
 
     .gallery{
-        width: 29%;
+        width: 28%;
     }
 }
 
 @media  only screen and (max-width: 800px){
 
     .gallery{
-        width: 44%;
+        width: 43%;
     }
 }
 
@@ -349,6 +495,8 @@ footer{
 
     .gallery{
         width: 90%;
+        margin-right: 7%;
+        margin-left: 3%;
     }
 
     .gallery img{
