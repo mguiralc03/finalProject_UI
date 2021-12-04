@@ -7,6 +7,7 @@
 html{
   background-color: #FCF7ED;
 }
+
 /* The follwing section will define the styling for the cover page */
 #page_cover{
   position:fixed;
@@ -53,16 +54,11 @@ html{
   position: absolute;
 }
 
-/* header{
-  width: 100%;
-  height: auto;
-} */
+/* COVER PAGE SECTION ENDS HERE */
 
-/* body{
-  width: 100%;
-  height: 100%;
-} */
+/* HOME PAGE SECTION */
 
+/* Header style */
 #header_home{
   background-color: #F2D9C3;
   width: 100%;
@@ -78,6 +74,7 @@ html{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
 }
 
+/* Style for the logo */
 #header_logo_div{
     justify-content: center;
     flex-grow: 4;
@@ -94,6 +91,7 @@ html{
   align-items: center
 }
 
+/* Style for the links of the header */
 #links_header_section{
     text-align: right;
     align-items: center;
@@ -124,6 +122,7 @@ html{
     transition-duration: 1s;
 }
 
+/* Menu icon */
 .fa-ellipsis-v{
     align-self: center;
     margin: 20px;
@@ -131,6 +130,7 @@ html{
     cursor: pointer;
 }
 
+/* Search bar style */
 #search_div{
     align-self: center;
     flex-grow: 3;
@@ -146,6 +146,7 @@ html{
     margin-left: 5px;
 }
 
+/* Footer style */
 footer{
     background-color: #464232;
     width: 100%;
@@ -157,6 +158,7 @@ footer{
     left: 0;
 }
 
+/* links for the footer */
 #links_footer_div{
     display: flex;
     flex-grow: 4;
@@ -174,6 +176,7 @@ footer{
     margin-top: 2px;
 }
 
+/* Icons of the footer */
 #icons_footer{
     flex-grow: 4;
     padding: 5px;
@@ -181,41 +184,54 @@ footer{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-right: 10px;
+}
+
+#space{
+    flex-grow: 4;
 }
 
 .fa-instagram{
     all: unset;
     color:white;
-    margin-right: 5px;
-
-
-
+    margin-right: 8px;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    border-radius: 25%;
+    width: 30px;
+    padding-left: 3px;
 }
 
 .fa-facebook-f{
     all: unset;
     color:white;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background: rgb(58, 58, 180);
+    padding-left: 8px;
+    padding-top: 3px;
+    width: 26px;
+    border-radius: 25%;
 
 }
 
 .fa-twitter{
     all: unset;
     color:white;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 8px;
+    margin-right: 8px;
 
 }
 
 .fa-pinterest-p{
     all: unset;
     color:white;
-    margin-left: 5px;
+    margin-left: 8px;
     margin-right: 10px;
 
 }
 
+/* Title for the footer */
 #title_footer{
     margin: 5px;
     margin-top: 10px;
