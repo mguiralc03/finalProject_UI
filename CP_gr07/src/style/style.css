@@ -61,6 +61,7 @@ html{
 body{
   padding: 0;
   margin: 0;
+  overflow-y: scroll;
 }
 
 /* Header style */
@@ -150,12 +151,29 @@ header{
 
 /*Image gallery style */
 
+#home_images{
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    width: 96%;
+    margin-left: 3%;
+    margin-right: 2%;
+    justify-content: center;
+}
+
 .gallery {
-  margin: 5px;
+  margin: 15px;
   border: 1px solid #ccc;
   position: relative;
+  float: left;
+  width: 17%;
+  justify-content: center;
+  align-items: center;
 
-  width: 180px;
+}
+
+.material-icons-outlined{
+    cursor: pointer;
 }
 
 .gallery:hover {
@@ -163,8 +181,9 @@ header{
 }
 
 .gallery img {
+  object-fit: cover;
   width: 100%;
-  height: auto;
+
 }
 
 .desc {
@@ -179,9 +198,6 @@ footer{
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
 /* links for the footer */
@@ -224,8 +240,15 @@ footer{
     background: rgb(131,58,180);
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     border-radius: 25%;
-    width: 18px;
+    width: 17px;
     padding: 5px;
+    cursor: pointer;
+}
+
+.fa-instagram:hover{
+    transition: 0.5s;
+    color: rgb(70, 6, 96);
+    background: white;
 }
 
 .fa-facebook-f{
@@ -236,9 +259,16 @@ footer{
     background: rgb(58, 58, 180);
     width: 15px;
     padding: 5px;
+    padding-top: 6px;
     padding-left: 7px;
     border-radius: 25%;
+    cursor: pointer;
+}
 
+.fa-facebook-f:hover{
+    transition: 0.5s;
+    color: rgb(58, 58, 180);
+    background: white;
 }
 
 .fa-twitter{
@@ -250,7 +280,13 @@ footer{
     width: 18px;
     padding: 5px;
     border-radius: 25%;
+    cursor: pointer;
+}
 
+.fa-twitter:hover{
+    transition: 0.5s;
+    color: rgb(63, 126, 193);
+    background: white;
 }
 
 .fa-pinterest-p{
@@ -259,11 +295,18 @@ footer{
     margin-left: 8px;
     margin-right: 10px;
     background: rgb(193, 63, 63);
-    width: 17px;
+    width: 16px;
     padding: 5px;
-    padding-left: 7px;
+    padding-top: 6px;
+    padding-left: 6px;
     border-radius: 25%;
+    cursor: pointer;
+}
 
+.fa-pinterest-p:hover{
+    transition: 0.5s;
+    color: rgb(193, 63, 63);
+    background: white;
 }
 
 /* Title for the footer */
@@ -279,4 +322,36 @@ footer{
     color:white;
     font-size: 20px;
     justify-content: center;
+}
+
+@media  only screen and (max-width: 1300px){
+
+    .gallery{
+        width: 21%;
+    }
+}
+
+@media  only screen and (max-width: 1000px){
+
+    .gallery{
+        width: 29%;
+    }
+}
+
+@media  only screen and (max-width: 800px){
+
+    .gallery{
+        width: 44%;
+    }
+}
+
+@media  only screen and (max-width: 600px){
+
+    .gallery{
+        width: 90%;
+    }
+
+    .gallery img{
+        height: 400px;
+    }
 }
