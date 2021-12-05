@@ -7,18 +7,18 @@ $(document).ready(function(){
       document.querySelector('#page_cover').style.display = 'none';
     });
 
-    $("#sumbit_login").submit(function(e){
-      e.preventDefault();
-      var email = $("#li_username").val();
-      var password = $("#li_password").val();
-      // Implement checkCookie
-      if(checkCookie(username, password)){
-        window.location.href= 'index.html';
-        $('.li_form').each(function(){
-          this.reset();
-        });
-      }
-    });
+    // $("#sumbit_login").submit(function(e){
+    //   e.preventDefault();
+    //   var email = $("#li_username").val();
+    //   var password = $("#li_password").val();
+    //   // Implement checkCookie
+    //   if(checkCookie(username, password)){
+    //     window.location.href= 'index.html';
+    //     $('.li_form').each(function(){
+    //       this.reset();
+    //     });
+    //   }
+    // });
 
     $("#submit_signup").submit(function(e){
       e.preventDefault();
