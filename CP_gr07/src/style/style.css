@@ -6,6 +6,7 @@
 /**/
 html{
   background-color: #FCF7ED;
+  height: 100%;
 }
 
 /* The follwing section will define the styling for the cover page */
@@ -282,8 +283,16 @@ html{
 body{
   padding: 0;
   margin: 0;
+  height: 100%;
+  width: 100%;
   overflow-y: scroll;
   font-family: "Raleway";
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  flex: 1 0 auto;
 }
 
 /* Header style */
@@ -302,7 +311,7 @@ header{
 /* Style for the logo */
 #header_logo_div{
     justify-content: center;
-    flex-grow: 4;
+    flex-grow: 2;
 }
 
 .logo_ontrip{
@@ -321,7 +330,8 @@ header{
     text-align: right;
     align-items: center;
     align-self: center;
-    flex-grow: 55;
+    flex-grow: 5;
+    margin-left: 10px;
 }
 
 #link_Home{
@@ -358,8 +368,9 @@ header{
 /* Search bar style */
 #search_div{
     align-self: center;
-    flex-grow: 3;
-    margin-left: 5%;
+    flex-grow: 4;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .fa-search{
@@ -378,15 +389,16 @@ header{
 /* Filters section style*/
 #filter_section{
   width: 100%;
-  height: 10%;
   display: none;
+  position: sticky;
+  top: 0;
   padding-left: 3px;
   padding-right: 8px;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid rgba(242, 217, 195, 0.3);
+  border: 1px solid rgba(242, 217, 195, 0.9);
   box-sizing: border-box;
-  background-color: rgba(242, 217, 195, 0.5);
+  background-color: rgba(242, 217, 195, 0.9);
 }
 
 /* Filter budget */
@@ -398,6 +410,7 @@ header{
 #range_bar{
     display:flex;
     flex-direction: column;
+    width: 400px;
 }
 
 input[type=range]{
@@ -406,7 +419,7 @@ input[type=range]{
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    width: 250px;
+    width: 400px;
     height: 7px;
     background: rgba(200, 187, 174, 0.69);
     border: none;
@@ -443,7 +456,7 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 20px;
     padding-left: 20px;
     padding-right: 25px;
-    width: 13%;
+    width: 80px;
 }
 
 #preferences{
@@ -454,7 +467,7 @@ input[type=range]::-webkit-slider-thumb {
     align-items: center;
 }
 
-#submit_btn{
+#submit_filters{
     border-color: rgb(153, 136, 121);
     color: rgb(153, 136, 121);
     font-weight: bold;
@@ -462,15 +475,47 @@ input[type=range]::-webkit-slider-thumb {
     height: 35px;
     align-self: center;
     padding-left: 20px;
-    padding-right: 25px;
+    padding-right: 20px;
     text-align: center;
     justify-content: center;
     cursor: pointer;
 }
 
-#submit_btn:hover{
+#submit_filters:hover{
     background: rgb(153, 136, 121);
     color: white;
+}
+
+#delete_btn{
+    border-color: rgb(153, 136, 121);
+    color: white;
+    background: rgb(153, 136, 121);
+    font-weight: bold;
+    border-style: solid;
+    height: 35px;
+    align-self: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#delete_btn:hover{
+    background: white;
+    color: rgb(153, 136, 121);
+}
+
+#icon_rankings{
+    position: relative;
+    display: none;
+}
+
+.fa-angle-up{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    cursor: pointer;
 }
 
 .filter_input{
@@ -489,6 +534,8 @@ input[type=range]::-webkit-slider-thumb {
     margin-bottom: 20px;
     padding: 0;
     width: 100%;
+    position: relative;
+    z-index: -1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -550,7 +597,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .bottom-photos{
-    display: inline-flex;
+    margin-top: 15px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -572,6 +620,7 @@ footer{
     height: auto;
     display: flex;
     flex-wrap: wrap;
+    flex-shrink:0;
 }
 
 /* links for the footer */
@@ -703,7 +752,6 @@ footer{
     .gallery{
         width: 21%;
     }
-
 }
 
 @media  only screen and (max-width: 1000px){
@@ -718,6 +766,25 @@ footer{
     .gallery{
         width: 43%;
     }
+
+    .logo_ontrip{
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .links_header{
+        font-size: 13px;
+    }
+
+    #search_input{
+        width: 150px;
+    }
+}
+
+@media  only screen and (max-width: 700px){
+    #range_bar{
+        width: 200px;
+    }
 }
 
 @media  only screen and (max-width: 600px){
@@ -730,5 +797,77 @@ footer{
 
     .gallery img{
         height: 400px;
+    }
+
+    #search_input{
+        height: 8px;
+        width: 80%;
+    }
+
+    #search_div{
+        width: 60%;
+    }
+
+    #icon_rankings{
+        display: flex;
+    }
+
+    #link_AboutUs{
+        display: none;
+    }
+
+    #link_Rankings{
+        display: none;
+    }
+
+    #delete_btn{
+        margin-left: 2px;
+    }
+
+    #submit_filters{
+        margin-right: 2px;
+    }
+
+    #place{
+        margin-right: 3px;
+    }
+
+    #preferences{
+        margin-left: 2px;
+    }
+
+    #filter_section{
+        position: relative;
+    }
+
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #links_footer_div{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 75px;
+        margin-right: 85px;
+        margin-bottom: 5px;
+    }
+
+    #title_footer{
+        margin: 0;
+    }
+
+    #text_footer{
+        margin: 0;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #icons_footer{
+        align-self: center;
+        margin: 0;
+        margin-left: 10px;
+        margin-bottom: 10px;
     }
 }

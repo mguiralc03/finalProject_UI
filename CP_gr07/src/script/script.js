@@ -7,31 +7,43 @@ $(document).ready(function(){
       document.querySelector('#page_cover').style.display = 'none';
     });
 
-    // $("#sumbit_login").submit(function(e){
-    //   e.preventDefault();
-    //   var email = $("#li_username").val();
-    //   var password = $("#li_password").val();
-    //   // Implement checkCookie
-    //   if(checkCookie(username, password)){
-    //     window.location.href= 'index.html';
-    //     $('.li_form').each(function(){
-    //       this.reset();
-    //     });
-    //   }
-    // });
+    $("#login_pu").submit(function(e){
+      e.preventDefault();
+      var username = $("#li_username").val();
+      var password = $("#li_password").val();
+      // Implement checkCookie
+      if(checkCookie(username, password)){
+        window.location.href= 'index.html';
+        $('#login_pu').each(function(){
+          this.reset();
+        });
+      }
+      $('#login_pu').each(function(){
+        this.reset();
+      });
+    });
 
-    $("#submit_signup").submit(function(e){
+    $("#signup_pu").submit(function(e){
       e.preventDefault();
       var username = $("#su_username").val();
       var email = $("#su_email").val();
       var password = $("#su_password").val();
       var cookie = email + "," + password;
-      setCookie(username, password)
-      setCookie("logged", "true");
-      window.location.href= 'index.html';
-      $('#submit_signup').each(function(){
-        this.reset();
-      });
+      var available = getCookie(username);
+      if(available == ""){
+        setCookie(username, cookie);
+        setCookie("logged", "true");
+        window.location.href= 'index.html';
+        $('#signup_pu').each(function(){
+          this.reset();
+        });
+      }else{
+        alert("This username already exists");
+        $('#submit_signup').each(function(){
+          this.reset();
+          });
+      }
+
     });
 
     $("#google_signup, #fb_signup").on("click", function(){
@@ -60,38 +72,45 @@ $(document).ready(function(){
     // Search and Filters
     $('.fa-search').click(function(){
         var value = $('#search_input').val().toLowerCase();
-        $('#filter_section').css("display", "flex");
         $('#home_images .gallery').filter(function(){
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
         });
         $('.gallery').filter('.'+value).show('100');
 
     });
+
+    $('#search_input').click(function(){
+        $('#filter_section').slideDown("slow");
+        $('#filter_section').css("display", "flex");
+    });
+
     $('#search_input').on('input', function(){
         var value = $('#search_input').val().toLowerCase();
         if (value == ""){
             $('#home_images .gallery').show();
-            $('#filter_section').css("display", "none");
+            $('#filter_section').slideUp("slow");
         }
     });
-    $('#submit_btn').click(function(e){
+
+    $('#submit_filters').click(function(e){
         e.preventDefault();
         var value = document.getElementById("search_input").value
         var budget = document.getElementById("price_bar").value
         var place = document.getElementById("place").value
         var preferences = document.getElementById("preferences").value
+        // if (value != ""){
         if (place != ""){
             if (preferences != "default"){
                 $("#home_images .gallery").filter(function(){
                     $(this).toggle($(this).text().toLowerCase().indexOf(place) > -1 && $(this).text().toLowerCase().indexOf(preferences) > -1);
-                    if (parseInt($(this).attr("id")) > budget){
+                    if (parseInt($(this).attr("value")) > budget){
                         $(this).hide();
                     }
                 });
             }else{
                 $("#home_images .gallery").filter(function(){
                     $(this).toggle($(this).text().toLowerCase().indexOf(place) > -1);
-                    if (parseInt($(this).attr("id")) > budget){
+                    if (parseInt($(this).attr("value")) > budget){
                         $(this).hide();
                     }
                 });
@@ -99,19 +118,27 @@ $(document).ready(function(){
         }else if (preferences != "default"){
                 $("#home_images .gallery").filter(function(){
                     $(this).toggle($(this).text().toLowerCase().indexOf(preferences) > -1);
-                    if (parseInt($(this).attr("id")) > budget){
+                    if (parseInt($(this).attr("value")) > budget){
                         $(this).hide();
                     }
                 });
         }else{
           $(".gallery").each(function(index, element){
-              if (parseInt($(this).attr("id")) > budget){
+              if (parseInt($(this).attr("value")) > budget){
                   $(this).hide();
               }else{
                   $(this).show();
               }
           });
         }
+     });
+
+     $('#delete_btn').on("click", function(){
+        $('#home_images .gallery').show();
+     });
+
+     $('#filters_arrow').on("click", function(){
+        $('#filter_section').slideUp("slow");
      });
 
         // $('.gallery').filter($('.gallery').text().toLowerCase().indexOF(place) > -1).show('100');
@@ -226,6 +253,24 @@ function getCookie(cname){
     }
   }
   return ""; //if our cookie was not found return an empty string
+}
+
+function checkCookie(username, password){
+  cookie = getCookie(username);
+  if(cookie != ""){
+    user_info = cookie.split(",");
+    cookie_password = user_info[1];
+    if(cookie_password == password){
+      alert("User and Password are correct");
+      return true;
+    }else{
+      alert("Incorrect Password");
+      return false;
+    }
+  }else{
+    alert("User does not exist");
+    return false;
+  }
 }
 
 function checkLogged(){

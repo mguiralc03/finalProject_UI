@@ -12,6 +12,7 @@
     </head>
 
     <body>
+      <div class="container">
         <header>
             <div id = "logo_div">
                 <img class ="logo_ontrip" src="./images/logo_wapo.png" alt="logo_ontrip">
@@ -25,6 +26,7 @@
                 <a class = "links_header" id = "link_Rankings" href = "">RANKINGS</a>
                 <a class = "links_header" id = "link_Home" href = "">HOME</a>
                 <a class = "links_header" id = "link_MyProfile" href = "">MY PROFILE</a>
+                <span class = "material-icons-outlined" id = "icon_rankings">leaderboard</span>
             </div>
             <a class="fa fa-ellipsis-v fa-2x"></a>
         </header>
@@ -48,11 +50,21 @@
                 <option value="spring">Spring</option>
                 <option value="winter">Winter</option>
             </select>
-            <input class = "filter_input" id = "submit_btn" type= "submit" value = "Apply">
+            <input class = "filter_input" id = "submit_filters" type= "submit" value = "Apply">
+            <input class = "filter_input" id = "delete_btn" type = "reset" value = "Delete">
+            <i class="fa fa-angle-up fa-2x" id = "filters_arrow"></i>
         </form>
 
+        <div id = "side_menu">
+            <div id = "profile_data">
+              <div id = >
+                <img>
+              </div>
+            </div>
+        </div>
+
         <div id = "home_images">
-            <div class="gallery desert" id = "2000">
+            <div class="gallery desert" value = "2000">
                 <a target="_blank" href="./images/desierto.jpg">
                   <img src="./images/desierto.jpg" alt="Desert" width="400" height="250">
                 </a>
@@ -64,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="gallery forest" id = "0">
+            <div class="gallery forest" value = "0">
               <a target="_blank" href="./images/autumwalk_home.jpg">
                 <img src="./images/autumwalk_home.jpg" alt="autumwalk" width="400" height="250">
               </a>
@@ -76,7 +88,7 @@
               </div>
             </div>
 
-            <div class="gallery flowers" id = "0">
+            <div class="gallery flowers" value = "0">
                 <a target="_blank" href="./images/lavanda.jpg">
                   <img src="./images/lavanda.png" alt="lavander" width="400" height="250">
                 </a>
@@ -88,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="gallery windmill" id = "0">
+            <div class="gallery windmill" value = "0">
                 <a target="_blank" href="./images/molino.jpg">
                   <img src="./images/molino.jpg" alt="windmill" width="400" height="250">
                 </a>
@@ -100,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="gallery mountain" id = "100">
+            <div class="gallery mountain" value = "100">
                 <a target="_blank" href="./images/mountain_home.jpg">
                   <img src="./images/mountain_home.jpg" alt="mountain" width="400" height="250">
                 </a>
@@ -112,7 +124,7 @@
                 </div>
             </div>
 
-            <div class="gallery village" id = "250">
+            <div class="gallery village" value = "250">
                 <a target="_blank" href="./images/village-home.jpg">
                   <img src="./images/village-home.jpg" alt="village" width="400" height="250">
                 </a>
@@ -124,7 +136,7 @@
                 </div>
             </div>
         </div>
-
+        </div>
         <footer>
             <div id = "links_footer_div">
                 <a class = "links_footer" id = "link_T&C" href = "">Terms and conditions</a>

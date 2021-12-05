@@ -34,7 +34,7 @@
             <img src="./images/logo_wapo.png" alt="logo_ontrip">
           </div>
           <div id = "li_form_container">
-            <div class= "pu_forms" id="login_pu">
+            <form class= "pu_forms" id="login_pu" method = "post">
               <h2>Welcome Back!</h2>
               <input type="text" class = "form_textbox" id = "li_username" placeholder = "Introduce Username" maxlength = "15" required>
               <input type="password" class = "form_textbox" id = "li_password" placeholder = "Introduce Password" pattern = "[0-9a-z]{1,30}" required>
@@ -43,9 +43,9 @@
               <p id = "li_sign_up">Sign Up ></p>
               <p id = "li_guest">Enter As Guest ></p>
 
-            </div>
+            </form>
 
-            <div class= "pu_forms" id="signup_pu">
+            <form class= "pu_forms" id="signup_pu" method = "post">
               <h2>Tell us about yourself</h2>
               <input type="text" class = "form_textbox" id = "su_username" placeholder = "Introduce Username" maxlength = "15" required>
               <input type="email" class = "form_textbox" id = "su_email" placeholder = "Introduce Email" required>
@@ -60,7 +60,7 @@
                 <img src="./images/fb_logo.png" alt="">
                 <p>Continue with Facebook</p>
               </div>
-            </div>
+            </form>
           </div>
     </body>
     <script
