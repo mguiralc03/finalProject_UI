@@ -2,12 +2,15 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Ontrip Login</title>
         <link rel="stylesheet" href="./style/style.css">
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     </head>
     <body>
+      <!-- PAGE COVER: Div used for our initial page -->
         <div id = "page_cover">
             <div id = "cover_logo">
                 <img src="./images/logo_wapo.png" alt="logo_ontrip">
@@ -18,10 +21,51 @@
             <div id = "begin_btn">
               <div id = "begin_box">
                 <p>Begin</p>
-                <i id='fas fa-chevron-right'></i>
+                <i class='fas fa-chevron-right'></i>
               </div>
 
+              <button id = "mobile_begin">Begin</button>
           </div>
         </div>
+
+        <!-- LOGIN PAGE: Displayed after a user clicks begin -->
+        <div id="login_page">
+          <div id="login_logo">
+            <img src="./images/logo_wapo.png" alt="logo_ontrip">
+          </div>
+          <div id = "li_form_container">
+            <div class= "pu_forms" id="login_pu">
+              <h2>Welcome Back!</h2>
+              <input type="text" class = "form_textbox" id = "li_username" placeholder = "Introduce Username" maxlength = "15" required>
+              <input type="password" class = "form_textbox" id = "li_password" placeholder = "Introduce Password" pattern = "[0-9a-z]{1,30}" required>
+              <input class = "submit_btn" id = "submit_login" type= "submit" value= "Log In">
+              <h3 class = "li_or"><span>OR</span></h3>
+              <p id = "li_sign_up">Sign Up ></p>
+              <p id = "li_guest">Enter As Guest ></p>
+
+            </div>
+
+            <div class= "pu_forms" id="signup_pu">
+              <h2>Tell us about yourself</h2>
+              <input type="text" class = "form_textbox" id = "su_username" placeholder = "Introduce Username" maxlength = "15" required>
+              <input type="email" class = "form_textbox" id = "su_email" placeholder = "Introduce Email" required>
+              <input type="password" class = "form_textbox" id = "su_password" placeholder = "Introduce Password" pattern = "[0-9a-z]{1,30}" required>
+              <input class = "submit_btn" id = "submit_signup" type= "submit" value= "Submit">
+              <h3 class = "li_or"><span>OR</span></h3>
+              <div id= "google_signup">
+                <img src="./images/google_logo.png" alt="">
+                <p>Continue with Google</p>
+              </div>
+              <div id= "fb_signup">
+                <img src="./images/fb_logo.png" alt="">
+                <p>Continue with Facebook</p>
+              </div>
+            </div>
+          </div>
     </body>
+    <script
+			  src="https://code.jquery.com/jquery-3.6.0.js"
+			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			  crossorigin="anonymous"></script>
+    <script src="./script/script.js"></script>
 </html>
