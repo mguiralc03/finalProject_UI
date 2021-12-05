@@ -1,5 +1,7 @@
 "use srict";
 
+setCookie("scroll", "close");
+
 $(document).ready(function(){
     // COVER PAGE SCRIPTS
     $("#begin_box, #mobile_begin").on("click", function(){
@@ -229,10 +231,20 @@ $(document).ready(function(){
         $('#filled_like6').css("display", "none");
     });
 
-    $(".fa-ellipsis-v").click(function(){
-        $("#side_menu").animate({width:'toggle'},350);
-        $("body").css("overflow", "hide");
-    });
+    if (getCookie("scroll") == "close"){
+      $(".fa-ellipsis-v").click(function(e){
+          e.preventDefault();
+          $("#side_menu").animate({width:'toggle'},350);
+          $("body").css("overflow-y", "hidden");
+          setCookie("scroll", "open");
+      });
+    }else{
+        $(".fa-ellipsis-v").click(function(e){
+            e.preventDefault();
+            $("body").css("overflow-y", "scroll");
+            setCookie("scroll", "close");
+        });
+    }
 });
 
 
