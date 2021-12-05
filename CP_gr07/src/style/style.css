@@ -391,6 +391,7 @@ header{
   width: 100%;
   display: none;
   position: sticky;
+  z-index: 3;
   top: 0;
   padding-left: 3px;
   padding-right: 8px;
@@ -534,8 +535,6 @@ input[type=range]::-webkit-slider-thumb {
     margin-bottom: 20px;
     padding: 0;
     width: 100%;
-    position: relative;
-    z-index: -1;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -605,6 +604,7 @@ input[type=range]::-webkit-slider-thumb {
 
 .usertag{
     left: 0;
+    bottom: 40;
     position: absolute;
 }
 
