@@ -228,6 +228,11 @@ $(document).ready(function(){
         $('#like6').css("display", "inline-flex");
         $('#filled_like6').css("display", "none");
     });
+
+    $(".fa-ellipsis-v").click(function(){
+        $("#side_menu").animate({width:'toggle'},350);
+        $("body").css("overflow", "hide");
+    });
 });
 
 

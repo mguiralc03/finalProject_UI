@@ -388,18 +388,18 @@ header{
 
 /* Filters section style*/
 #filter_section{
-  width: 100%;
-  display: none;
-  position: sticky;
-  z-index: 3;
-  top: 0;
-  padding-left: 3px;
-  padding-right: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-  border: 1px solid rgba(242, 217, 195, 0.9);
-  box-sizing: border-box;
-  background-color: rgba(242, 217, 195, 0.9);
+    width: 100%;
+    display: none;
+    position: sticky;
+    z-index: 3;
+    top: 0;
+    padding-left: 3px;
+    padding-right: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid rgba(242, 217, 195, 0.9);
+    box-sizing: border-box;
+    background-color: rgba(242, 217, 195, 0.9);
 }
 
 /* Filter budget */
@@ -528,6 +528,95 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 20px;
 }
 
+/* SIDE MENU STYLE */
+#side_menu{
+    background-color: #ECE4DA;
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    display: none;
+}
+
+#profile_data{
+    border-bottom: 2px solid gray;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#profile_img{
+    margin: 10%;
+    display: flex;
+}
+
+#user_information{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+#user_information h2{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    justify-content: center;
+    font-family: "Segoe UI";
+    font-size: 20px;
+}
+
+#user_information p{
+    margin:0;
+    justify-content: center;
+    color: gray;
+    font-family: "Roboto";
+}
+
+#profile_img img{
+    border-radius: 50px;
+    min-height: 70px;
+    max-height: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+#side_options{
+    text-align: center;
+    font-family: "Segoe UI";
+    margin-top: 40px;
+}
+
+.option{
+  border-bottom: 1px solid rgba(117, 119, 115, 0.93);
+  width: 60%;
+  margin-left: 20%;
+  font-size: 12px;
+  font-family: "Segoe UI";
+  color: grey;
+}
+
+.option h2 {
+  margin-bottom: 8px;
+}
+
+.option:hover{
+    color: black;
+    background: rgb(176,173,173);
+    background: linear-gradient(0deg, rgba(176,173,173,0.5) 0%, rgba(176,173,173,0.3133403703278187) 25%, rgba(176,173,173,0) 100%);
+}
+
+#logout{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+  border-top: 2px solid grey;
+  position: sticky;
+  bottom: 0;
+}
 /*Image gallery style */
 
 #home_images{
@@ -535,6 +624,7 @@ input[type=range]::-webkit-slider-thumb {
     margin-bottom: 20px;
     padding: 0;
     width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -615,8 +705,12 @@ input[type=range]::-webkit-slider-thumb {
 footer{
     background-color: #464232;
     width: 100%;
+    margin-top: 5px;
     height: auto;
     display: flex;
+    position: relative;
+    z-index: 3;
+    bottom: 0;
     flex-wrap: wrap;
     flex-shrink:0;
 }
@@ -748,7 +842,7 @@ footer{
 @media  only screen and (max-width: 1300px){
 
     .gallery{
-        width: 21%;
+        width: 19%;
     }
 }
 
@@ -756,6 +850,10 @@ footer{
 
     .gallery{
         width: 28%;
+    }
+
+    #side_menu{
+        width: 40%;
     }
 }
 
@@ -776,6 +874,19 @@ footer{
 
     #search_input{
         width: 150px;
+    }
+
+    #side_menu{
+        height: 146.5%;
+        width: 50%;
+    }
+
+    #user_information > h2{
+        font-size: 17px;
+    }
+
+    #user_information >   p{
+        font-size: 14px;
     }
 }
 
@@ -868,4 +979,14 @@ footer{
         margin-left: 10px;
         margin-bottom: 10px;
     }
+
+    #side_menu{
+        height: 146.5%;
+        width: 100%;
+    }
+
+    #profile_img {
+        justify-content: center;
+    }
+
 }
