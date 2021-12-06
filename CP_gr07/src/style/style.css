@@ -10,6 +10,9 @@ html{
 }
 
 /* The follwing section will define the styling for the cover page */
+#cover_body{
+    overflow-y: hidden;
+}
 #page_cover{
   position:fixed;
   background: url("../images/coverMountain.jpeg") no-repeat;
@@ -437,6 +440,24 @@ input[type=range]::-webkit-slider-thumb {
     background: rgb(153, 136, 121);
     margin-top: -3px;
 }
+
+input[type="range"]::-moz-range-track {
+    width: 400px;
+    height: 7px;
+    background: rgba(200, 187, 174, 0.69);
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: rgb(153, 136, 121);
+    margin-top: -3px;
+}
+
 
 
 #range{
