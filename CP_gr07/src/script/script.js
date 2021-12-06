@@ -48,7 +48,8 @@ $(document).ready(function(){
 
     });
 
-    $("#google_signup, #fb_signup").on("click", function(){
+    $("#google_signup, #fb_signup").on("click", function(e){
+      e.preventDefault();
       var username = "Bentley";
       var email = "bgirard@gmail.com";
       var password = "canada";
@@ -82,6 +83,11 @@ $(document).ready(function(){
     });
 
     $('#search_input').click(function(){
+        if (getCookie("scroll") == "open"){
+            $("#side_menu").animate({width:'toggle'},350);
+            setCookie("scroll", "close");
+            $("body").css("overflow-y", "scroll")
+        }
         $('#filter_section').slideDown("slow");
         $('#filter_section').css("display", "flex");
     });
@@ -143,10 +149,6 @@ $(document).ready(function(){
         $('#filter_section').slideUp("slow");
      });
 
-        // $('.gallery').filter($('.gallery').text().toLowerCase().indexOF(place) > -1).show('100');
-        // for (let step = 0; step <= budget ; step++) {
-        //
-        // }
 
     // Likes of the main page
     $('#like1').click(function(){
@@ -292,11 +294,39 @@ $(document).ready(function(){
             $("#side_menu").animate({width:'toggle'},350);
             $("body").css("overflow-y", "hidden");
             setCookie("scroll", "open");
+            $('#filter_section').slideUp("slow");
         }else{
             $("#side_menu").animate({width:'toggle'},350);
             $("body").css("overflow-y", "scroll");
             setCookie("scroll", "close");
         }
+    });
+
+    if (checkLogged()){
+          $("#myprofile").css("display", "block");
+          $("#myprofile_dot").css("display", "block");
+
+          $("#mycollections").css("display", "block");
+          $("#mycollections_dot").css("display", "block");
+
+          $("#addexperience").css("display", "block");
+          $("#addexperience_dot").css("display", "block");
+
+          $("#dmessages").css("display", "block");
+
+          $("#logout").css("display", "inline-flex");
+
+          $("#su_option").css("display", "none");
+          $("#su_dot").css("display", "none");
+
+          $("#li_option").css("display", "none");
+
+          document.getElementById("name").innerHTML = username;
+          var myArray = getCookie(username);
+          document.getElementById("email").innerHTML = myArray[0];
+    }
+    $('#lo_option').click(function(){
+      setCookie("logged", "false")
     });
 
 
@@ -333,6 +363,10 @@ $(document).ready(function(){
       $('#all_time_option').css("color", "#000000");
     });
 
+    $('#home_icon').click(function(e){
+      e.preventDefault();
+      window.location.href= 'index.html';
+    });
     // -----RANKINGS END -----
 });
 

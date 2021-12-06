@@ -552,9 +552,9 @@ input[type=range]::-moz-range-thumb {
 
 /* SIDE MENU STYLE */
 #side_menu{
+    height: 87vh;
     background-color: #ECE4DA;
-    width: 25%;
-    height: 100%;
+    width: 28%;
     position: absolute;
     right: 0;
     z-index: 2;
@@ -577,6 +577,9 @@ input[type=range]::-moz-range-thumb {
     flex-direction: column;
     margin-left: 40px;
     margin-right: 20px;
+    align-items: center;
+    width: 50%;
+    align-self: center;
 }
 
 #user_information h2{
@@ -584,7 +587,9 @@ input[type=range]::-moz-range-thumb {
     margin-top: 5px;
     justify-content: center;
     font-family: "Segoe UI";
+    align-self: center;
     font-size: 20px;
+
 }
 
 #user_information p{
@@ -607,57 +612,79 @@ input[type=range]::-moz-range-thumb {
 #side_options{
     text-align: center;
     font-family: "Segoe UI";
-    margin-top: 40px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#side_options p{
+    font-size: 20px;
+    color: rgb(176,173,173);
+    margin: 0;
 }
 
 .option{
-  border-bottom: 1px solid rgba(117, 119, 115, 0.93);
-  width: 60%;
-  margin-left: 20%;
-  font-size: 12px;
-  font-family: "Segoe UI";
-  color: grey;
-  margin-bottom: 8px;
-  margin-top: 4px;
+    width: 60%;
+    margin-left: 20%;
+    font-size: 12px;
+    font-family: "Segoe UI";
+    color: grey;
+    margin-bottom: 0;
+    margin-top: 0;
+    border-radius: 10px;
 }
 
 .option a {
-  all:unset;
-  font-size: 20px;
-  font-family: "Segoe UI";
-  font-weight: bold;
-  margin-bottom: 8px;
+    all:unset;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    margin-bottom: 2%;
 }
+
 
 .option:hover{
     color: black;
     background: rgb(176,173,173);
-    background: linear-gradient(0deg, rgba(176,173,173,0.5) 0%, rgba(176,173,173,0.3133403703278187) 25%, rgba(176,173,173,0) 100%);
+    background: radial-gradient(circle, rgba(176,173,173,0.5) 0%, rgba(176,173,173,0) 100%);
+    cursor: pointer;
+}
+
+#email, #myprofile, #myprofile_dot, #mycollections, #mycollections_dot,
+#addexperience, #addexperience_dot, #dmessages, #dmessages_dot, #aboutus, #aboutus_dot{
+    display: none;
 }
 
 #logout{
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
     margin-left: 5%;
     border-top: 2px solid grey;
-    position: sticky;
-    bottom: 0;
-    margin-top: 50px;
+    position: absolute;
+    bottom: 10px;
 }
+
 #logout a {
     all: unset;
     font-size: 20px;
     font-family: "Segoe UI";
     font-weight: bold;
-    margin-bottom: 8px;
-    margin-top: 3px;
+}
+
+#logout a:hover{
+    cursor: pointer;
 }
 
 #logout i {
-    margin-top: 8px;
+    margin-top: 10px;
 }
+
+#logout i {
+    cursor: pointer;
+}
+
 /*Image gallery style */
 
 #home_images{
@@ -896,163 +923,11 @@ footer{
     justify-content: center;
 }
 
-@media  only screen and (max-width: 1300px){
-
-    .gallery{
-        width: 19%;
-    }
-}
-
-@media  only screen and (max-width: 1000px){
-
-    .gallery{
-        width: 28%;
-    }
-
-    #side_menu{
-        width: 40%;
-    }
-}
-
-@media  only screen and (max-width: 800px){
-
-    .gallery{
-        width: 43%;
-    }
-
-    .logo_ontrip{
-        max-width: 60px;
-        max-height: 60px;
-    }
-
-    .links_header{
-        font-size: 13px;
-    }
-
-    #search_input{
-        width: 150px;
-    }
-
-    #side_menu{
-        height: 146.5%;
-        width: 50%;
-    }
-
-    #user_information > h2{
-        font-size: 17px;
-    }
-
-    #user_information >   p{
-        font-size: 14px;
-    }
-}
-
-@media  only screen and (max-width: 700px){
-    #range_bar{
-        width: 200px;
-    }
-}
-
-@media  only screen and (max-width: 600px){
-
-    .gallery{
-        width: 90%;
-        margin-right: 7%;
-        margin-left: 3%;
-    }
-
-    .gallery img{
-        height: 400px;
-    }
-
-    #link_AboutUs_rank{
-        display: none;
-    }
-
-    #search_input{
-        height: 8px;
-        width: 80%;
-    }
-
-    #search_div{
-        width: 60%;
-    }
-
-    #icon_rankings{
-        display: flex;
-    }
-
-    #link_AboutUs{
-        display: none;
-    }
-
-    #link_Rankings{
-        display: none;
-    }
-
-    #delete_btn{
-        margin-left: 2px;
-    }
-
-    #submit_filters{
-        margin-right: 2px;
-    }
-
-    #place{
-        margin-right: 3px;
-    }
-
-    #preferences{
-        margin-left: 2px;
-    }
-
-    #filter_section{
-        position: relative;
-    }
-
-    footer{
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-
-    #links_footer_div{
-        flex-direction: row;
-        justify-content: space-between;
-        margin-left: 75px;
-        margin-right: 85px;
-        margin-bottom: 5px;
-    }
-
-    #title_footer{
-        margin: 0;
-    }
-
-    #text_footer{
-        margin: 0;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-
-    #icons_footer{
-        align-self: center;
-        margin: 0;
-        margin-left: 10px;
-        margin-bottom: 10px;
-    }
-
-    #side_menu{
-        height: 146.5%;
-        width: 100%;
-    }
-
-    #profile_img {
-        justify-content: center;
-    }
-
-}
-
 /* RANKING SECTION BEGIN */
+
+#home_icon{
+    display: none;
+}
 
 #ranking_options{
   display:flex;
@@ -1165,3 +1040,180 @@ footer{
 }
 
 /* RANKINGS END */
+
+@media  only screen and (max-width: 1300px){
+
+    .gallery{
+        width: 19%;
+    }
+
+    #side_menu{
+        width: 30%;
+    }
+}
+
+@media  only screen and (max-width: 1000px){
+
+    .gallery{
+        width: 28%;
+    }
+
+    #side_menu{
+        width: 40%;
+    }
+}
+
+@media  only screen and (max-width: 800px){
+
+    .gallery{
+        width: 43%;
+    }
+
+    .logo_ontrip{
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .links_header{
+        font-size: 13px;
+    }
+
+    #search_input{
+        width: 150px;
+    }
+
+    #side_menu{
+        width: 50%;
+        height: 89vh;
+    }
+
+    #user_information > h2{
+        font-size: 17px;
+    }
+
+    #user_information >   p{
+        font-size: 14px;
+    }
+}
+
+@media  only screen and (max-width: 700px){
+    #range_bar{
+        width: 200px;
+    }
+}
+
+@media  only screen and (max-width: 600px){
+
+    .gallery{
+        width: 90%;
+        margin-right: 7%;
+        margin-left: 3%;
+    }
+
+    .gallery img{
+        height: 400px;
+    }
+
+    #link_AboutUs_rank{
+        display: none;
+    }
+
+    #link_Home_rank{
+        display: none;
+    }
+
+    #home_icon{
+        display: flex;
+        cursor: pointer;
+    }
+
+    #search_input{
+        height: 8px;
+        width: 80%;
+    }
+
+    #search_div{
+        width: 50%;
+    }
+
+    #icon_rankings{
+        display: flex;
+    }
+
+    #link_AboutUs{
+        display: none;
+    }
+
+    #link_Rankings{
+        display: none;
+    }
+
+    #delete_btn{
+        margin-left: 2px;
+    }
+
+    #submit_filters{
+        margin-right: 2px;
+    }
+
+    #place{
+        margin-right: 3px;
+    }
+
+    #preferences{
+        margin-left: 2px;
+    }
+
+    #filter_section{
+        position: relative;
+    }
+
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #links_footer_div{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 75px;
+        margin-right: 85px;
+        margin-bottom: 5px;
+    }
+
+    #title_footer{
+        margin: 0;
+    }
+
+    #text_footer{
+        margin: 0;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    #icons_footer{
+        align-self: center;
+        margin: 0;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+
+    #user_information h2{
+        font-size: 20px;
+    }
+
+    #side_menu{
+        width: 100%;
+    }
+
+    #aboutus, #aboutus_dot{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #profile_img {
+        justify-content: center;
+    }
+
+}
