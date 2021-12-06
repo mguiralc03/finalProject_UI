@@ -384,6 +384,7 @@ header{
     border-radius: 5px;
     padding: 10px;
     margin-left: 5px;
+    font-family: "Times New Roman"
 }
 
 /* Filters section style*/
@@ -691,6 +692,22 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 #filled_like6{
+    display: none;
+}
+
+#filled_like7{
+    display: none;
+}
+
+#filled_like8{
+    display: none;
+}
+
+#filled_like9{
+    display: none;
+}
+
+#filled_like10{
     display: none;
 }
 
@@ -1009,3 +1026,117 @@ footer{
     }
 
 }
+
+/* RANKING SECTION BEGIN */
+
+#ranking_options{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#ranking_options h1{
+  text-decoration: underline;
+  margin: 20px;
+  font-size: 30px;
+  font-family: "Raleway";
+  transition: 0.3s;
+}
+
+#ranking_options h1:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+
+}
+
+#all_time_option{
+  color: #80673B;
+}
+
+.ranking_container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ranked_experience{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 28px;
+}
+
+.ranked_experience h1{
+  margin-top: 80px;
+}
+
+
+
+
+.ranking_user_info{
+  display:flex;
+  flex-direction: column;
+  margin: 15px 20px 0px 10px;
+  text-align: center;
+}
+
+.ranking_user_info img{
+
+  min-height: 80px;
+  max-height: 80px;
+  width: 80px;
+  min-width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.ranking_user_info p{
+  font-size: 15px;
+}
+
+.follow_button{
+  margin-top: 20px;
+}
+
+.follow_btn{
+  border-color: rgb(153, 136, 121);
+  color: rgb(153, 136, 121);
+  font-weight: bold;
+  border-style: solid;
+  height: 35px;
+  align-self: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+}
+
+.ranking_exp_info{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.ranking_exp_info p{
+  font-size: 20px;
+}
+
+.ranking_images{
+  height: 230px;
+  width: 155px;
+  object-fit: cover;
+}
+
+#monthly_container{
+  display:none;
+}
+
+#weekly_container{
+  display:none;
+}
+
+/* RANKINGS END */
