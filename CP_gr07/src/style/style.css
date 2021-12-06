@@ -965,6 +965,10 @@ footer{
         height: 400px;
     }
 
+    #link_AboutUs_rank{
+        display: none;
+    }
+
     #search_input{
         height: 8px;
         width: 80%;
