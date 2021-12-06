@@ -325,8 +325,9 @@ $(document).ready(function(){
           var myArray = getCookie(username);
           document.getElementById("email").innerHTML = myArray[0];
     }
+
     $('#lo_option').click(function(){
-      setCookie("logged", "false")
+      setCookie("logged", "false");
     });
 
 
