@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>My Profile</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+    </head>
+    <body>
+            <header>
+                <div id = "logo_div">
+                    <img class ="logo_ontrip" src="./images/logo_wapo.png" alt="logo_ontrip">
+                </div>
+                <div id = "links_header_section">
+                    <a class = "links_header" id = "link_AboutUs_rank" href = "">ABOUT US</a>
+                    <a class = "links_header" id = "link_Home_rank" href = "./index.html">HOME</a>
+                    <i class = "fa fa-home fa-lg" id = "home_icon"></i>
+                </div>
+                <a class="fa fa-ellipsis-v fa-2x"></a>
+            </header>
+
+            <div class = "container">
+                <div id = "profile_banner">
+                    <img src = "./images/banner.jpg">
+                </div>
+                <div id = "info_container" >
+                  <div id = "profile_general_info">
+                      <div id = "profile_img_div">
+                          <img src = "./images/icon-user-default.png">
+                      </div>
+                      <div id = "profile_desc">
+                        <h2 id = "pname">User Name</h2>
+                        <p id = "puser">@user</p>
+                      </div>
+                  </div>
+                  <div id = "profile_detailed_info">
+                      <div id = "stats">
+                          <div id = followers_div>
+                              <h2 id = "fnumber">0</h2>
+                              <h2 id = "ftext">Followers</h2>
+                          </div>
+                          <div id = posts_div>
+                              <h2 id = "posts_number">0</h2>
+                              <h2 id = "posts_text">Posts</h2>
+                          </div>
+                      </div>
+
+                      <div id = "sub_info">
+                          <div id = location>
+                              <a class="fa fa-map-marker"></a>
+                              <p id = "location_text"> Location</p>
+                          </div>
+                          <div id = join_date>
+                              <a class="fa fa-calendar" ></a>
+                              <p id = "joined_text">Joined</p>
+                          </div>
+                          <div id = my_collections>
+                              <button class = "profile_btn" id = my_collections_btn>My Collections</button>
+                          </div>
+                          <div id = add_experience>
+                              <button class = "profile_btn" id = add_experience_btn>Add new experience</button>
+                          </div>
+                          <div id = settings>
+                              <i class="fa fa-cog fa-2x "></i>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div id = "links_footer_div">
+                    <a class = "links_footer" id = "link_T&C" href = "">Terms and conditions</a>
+                    <a class = "links_footer" id = "link_privacy" href = "">Policy of privacy</a>
+                </div>
+                <div id ='title_footer'>
+                    <p id = text_footer > ONTRIP </p>
+                </div>
+                <div id = "icons_footer">
+                    <div id = "space"></div>
+                    <a class="fa fa-instagram fa-lg" id = "link_instagram" href="https://www.instagram.com/" > </a>
+                    <a class="fa fa-facebook-f fa-lg" id = "link_facebook" href="https://www.facebook.com/" > </a>
+                    <a class="fa fa-twitter fa-lg" id = "link_twitter" href="https://twitter.com/?lang=es" > </a>
+                    <a class="fa fa-pinterest-p fa-lg" id = "link_pinterest" href="https://www.pinterest.es/" > </a>
+                </div>
+
+            </footer>
+            <script src="https://unpkg.com/jquery/dist/jquery.js"></script>
+            <script src="https://unpkg.com/image-map/dist/image-map.jquery.js"></script>
+            <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+            <script src="./script/script.js"> </script>
+    </body>
+</html>

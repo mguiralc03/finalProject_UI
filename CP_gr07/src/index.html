@@ -37,7 +37,8 @@
 
         <form id = "filter_section">
             <div class = "filter_input" id = "range">
-                <p id = "range_title">Maximum budget</p><p> 0$ </p>
+                <p id = "range_title">Maximum budget</p>
+                <p> 0$ </p>
                 <div id = "range_bar">
                   <input id = "price_bar" type="range" value = "5000" min = "0" max = "5000" oninput="this.nextElementSibling.value = this.value">
                   <output>5000</output>
@@ -108,8 +109,8 @@
 
         <div id = "home_images">
             <div class="gallery cliff" value = "2000">
-                <a target="_blank" href="./images/desierto.jpg">
-                  <img src="./images/desierto.jpg" alt="Vermilion Cliffs" width="400" height="250">
+                <a target="_blank">
+                  <img id = "cliff_image" src="./images/desierto.jpg" alt="Vermilion Cliffs" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like1">favorite_border</a>
@@ -287,11 +288,12 @@
                 <div class="comments_box">
                     <div class = "user_comment1">
                       <img src="./images/user_2.jpg" alt="user2">
-                      <p class = "comment_description"><b>User2</b> Yooooo nice knife dude, holy shit!</p>
+                      <p class = "comment_description"><b>user2</b> Yooooo nice knife dude, holy shit!</p>
                     </div>
 
                 </div>
-
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
               </div>
           </div>
 

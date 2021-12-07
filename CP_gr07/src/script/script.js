@@ -388,7 +388,7 @@ $(document).ready(function(){
             setCookie("scroll", "close");
         }
     });
-
+// SIGNUP AND LOGIN POPUPS WITHIN MAIN PAGE
     $("#su_option").click(function(e){
         e.preventDefault();
         $("#overlay").fadeIn();
@@ -420,6 +420,58 @@ $(document).ready(function(){
 
     $('#lo_option').click(function(){
       setCookie("logged", "false");
+    });
+
+// Experiences POPUPS in Main Page
+    $('#cliff_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#cliff").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#exp_close').click(function(e){
+      e.preventDefault();
+      $("#overlay").fadeOut();
+      $('#mp_form_container').css("display", "none");
+      $("#cliff").css("display","none");
+      $("body").css("overflow-y", "scroll");
+    });
+
+    $('#like_exp1').click(function(){
+      if(checkLogged()){
+        $('#like_exp1').css("display", "none");
+        $('#filled_like_exp1').css("display","block");
+      }
+      else{
+        alert("Please log in or sign up to like");
+      }
+
+    });
+
+    $('#filled_like_exp1').click(function(){
+      $('#filled_like_exp1').css("display", "none");
+      $('#like_exp1').css("display","block");
+    });
+
+    $('#bookmark_exp1').click(function(){
+      if(checkLogged()){
+        $('#bookmark_exp1').css("display", "none");
+        $('#filled_bookmark_exp1').css("display","block");
+      }else{
+        alert("Please log in or sign up to like");
+      }
+    });
+
+    $('#filled_bookmark_exp1').click(function(){
+      $('#filled_bookmark_exp1').css("display", "none");
+      $('#bookmark_exp1').css("display","block");
     });
 
 

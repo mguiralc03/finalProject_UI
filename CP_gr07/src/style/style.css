@@ -663,7 +663,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 #mp_form_container{
-  /* display:none; */
+  display:none;
   position: relative;
   z-index: 5;
 }
@@ -686,10 +686,11 @@ input[type=range]::-moz-range-thumb {
   border-radius: 6px;
   vertical-align: middle;
   margin:auto;
-  display:flex;
+  display:none;
   flex-wrap: wrap;
   align-items: center;
   width: 80%;
+  max-height: 80%;
   padding: 20px;
 }
 
@@ -714,26 +715,31 @@ input[type=range]::-moz-range-thumb {
 .photo_container{
   display: flex;
   flex-direction: column;
-  width: 40%;
+  margin-right: 10px;
+  width: 25%;
 }
 
 .description_container{
-  width: 60%;
+  width: 67%;
 }
 
 .photo_container img{
-    width: 90%;
+    max-width: 100%;
+    max-height: 350px;
+    min-height: 200px;
+    min-width: 100%;
+    object-fit: cover;
     height: auto;
 }
 
-.photo_container .icons{
-    flex-basis:50%;
+.icons{
+    flex-basis: 60%;
     display: inline-flex;
     align-items: center;
 }
 
 .space_between{
-    flex-basis:62%;
+    flex-basis:85%;
 }
 
 .description_titles{
@@ -746,8 +752,12 @@ input[type=range]::-moz-range-thumb {
 }
 .icons #filled_like_exp1, #filled_bookmark_exp1{
   display:none;
+  cursor: pointer;
 }
 
+.comments{
+    width: 100%;
+}
 .comments_box{
     margin-left: 10%;
     margin-right: 20%;
@@ -758,17 +768,53 @@ input[type=range]::-moz-range-thumb {
   display:flex;
   flex-wrap:wrap;
   width:100%;
+  align-items: center;
 }
+
 .user_comment1 img{
     border: 2px solid white;
     object-fit: cover;
     border-radius: 50%;
     width: 35px;
     height: 35px;
+    margin-right: 10px;
 }
 
 .username_and_comment{
   flex-basis:70%;
+  margin-left:5px;
+}
+
+.comment_input{
+    all:unset;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 15px;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: 5%;
+}
+
+.send_btn{
+    all: unset;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-left: 5px;
+    background-color: white;
+    padding: 4px;
+    border: 2px solid rgb(153, 136, 121);
+    color: rgb(153, 136, 121);
+    font-weight: bold;
+    margin-right: 5%;
+}
+
+.send_btn:hover{
+    border-color: white;
+    cursor: pointer;
+    background-color: rgb(153, 136, 121);
+    color: white;
+
 }
 
 .close_btn{
@@ -842,79 +888,84 @@ input[type=range]::-moz-range-thumb {
 
 .tags{
     position: absolute;
+    font-size: 4px;
     right: 45px;
     color: rgba(254, 254, 254, 0);
     cursor: default;
 }
 
+#like1, #like2, #like3, #like4, #like5, #like6, #like7, #like8, #like9, #like10{
+  cursor: pointer;
+}
+
 #filled_like1{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like2{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like3{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like4{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like5{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like6{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like7{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like8{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like9{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 #filled_like10{
     display: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
+    position: relative;
+    left: 0;
 }
 
 .gallery img {
@@ -941,6 +992,103 @@ input[type=range]::-moz-range-thumb {
 .desc {
     padding: 15px;
     text-align: center;
+}
+
+/*Profile page style*/
+
+#profile_banner{
+    width: 100%;
+    height: 17%;
+}
+
+#profile_banner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#info_container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: -4%;
+}
+
+#profile_general_info{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    width: 33%;
+    margin-right: 13%;
+}
+
+#profile_img_div img{
+    border-radius: 100px;
+    min-height: 40%;
+    min-width: 40%;
+    max-width: 40%;
+    object-fit: cover;
+    border: 3px solid white;
+}
+
+#pname{
+    display: inline-flex;
+    font-size: 150%;
+}
+
+#puser{
+    font-size: 20px;
+}
+
+#profile_detailed_info{
+    display: flex;
+    flex-direction: column;
+}
+
+#stats{
+    display: inline-flex;
+    margin-left: 15%;
+    margin-top: 3%;
+}
+
+#followers_div, #posts_div{
+    text-align: center;
+    padding: 10%;
+}
+
+#sub_info{
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#location, #join_date{
+    display: flex;
+    flex-direction:row;
+    margin-right: 50px;
+    align-items: center;
+}
+
+#location_text, #joined_text{
+    padding-left: 10px;
+}
+
+.profile_btn{
+    color: white;
+    border-style: none;
+    height: 35px;
+    align-self: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    background: black;
+    border-radius: 10px;
+    margin-right: 15px;
 }
 
 /* Footer style */
@@ -1257,6 +1405,10 @@ footer{
     #side_menu{
         width: 30%;
     }
+
+    .comment_input{
+        width: 60%;
+    }
 }
 
 @media  only screen and (max-width: 1000px){
@@ -1267,6 +1419,17 @@ footer{
 
     #side_menu{
         width: 40%;
+    }
+
+    .description_container{
+        width: 58%;
+    }
+
+    .photo_container{
+        width: 35%;
+    }
+    .comment_input{
+        width: 70%;
     }
 }
 
@@ -1301,12 +1464,19 @@ footer{
     #user_information >   p{
         font-size: 14px;
     }
+    .comment_input{
+        width: 60%;
+    }
 }
 
 @media  only screen and (max-width: 700px){
     #range_bar{
         width: 200px;
     }
+    input[type="range"]::-moz-range-track {
+        width: 200px;
+    }
+
 }
 
 @media  only screen and (max-width: 600px){
@@ -1365,6 +1535,14 @@ footer{
         margin-right: 2px;
     }
 
+    #range_title{
+       width: 100%;
+    }
+
+    #range{
+        justify-content: center;
+    }
+
     #place{
         margin-right: 3px;
     }
@@ -1376,6 +1554,7 @@ footer{
     #filter_section{
         position: relative;
     }
+
 
     footer{
         flex-direction: column;
@@ -1427,5 +1606,39 @@ footer{
 
     #link_Rankings_exp, #link_Home_exp{
         display: none;
+    }
+
+    .experience{
+        display: none;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .photo_container{
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .description_container{
+        width: 100%;
+    }
+
+    .comments{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .comment_input{
+        width: 70%;
+        margin-left: 5%;
+    }
+
+    .author_tag{
+        padding: 2px;
+        right: 70px;
+        background-color: black;
+        color: white;
     }
 }
