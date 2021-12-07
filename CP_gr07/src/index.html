@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     </head>
 
     <body>
@@ -31,6 +32,8 @@
             </div>
             <a class="fa fa-ellipsis-v fa-2x"></a>
         </header>
+
+        <div id = "overlay"></div>
 
         <form id = "filter_section">
             <div class = "filter_input" id = "range">
@@ -104,15 +107,15 @@
         <!--Side menu END-->
 
         <div id = "home_images">
-            <div class="gallery desert" value = "2000">
+            <div class="gallery cliff" value = "2000">
                 <a target="_blank" href="./images/desierto.jpg">
-                  <img src="./images/desierto.jpg" alt="Desert" width="400" height="250">
+                  <img src="./images/desierto.jpg" alt="Vermilion Cliffs" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like1">favorite_border</a>
                     <a class="material-icons-outlined" id = "filled_like1">favorite</a>
                     <p class="usertag"> @user1 </p>
-                    <p class= "tags"> arabia summer </p>
+                    <p class= "tags"> eeuu summer </p>
                 </div>
             </div>
 
@@ -184,7 +187,7 @@
                     <a class="material-icons-outlined" id = "like7">favorite_border</a>
                     <a class="material-icons-outlined" id = "filled_like7">favorite</a>
                     <p class="usertag"> @user2 </p>
-                    <p class= "tags"> norway winter sea clif</p>
+                    <p class= "tags"> norway winter sea cliff</p>
                 </div>
             </div>
 
@@ -225,7 +228,78 @@
             </div>
 
         </div>
+
+        <!--POPUPS SECTIONS-->
+        <div class = "li_form_container" id = "mp_form_container">
+          <form class= "pu_forms" id="mp_login_pu" method = "post">
+            <button class = "close_btn" id = "li-close">&times;</button>
+            <h2>Welcome Back!</h2>
+            <input type="text" class = "form_textbox" id = "li_username" placeholder = "Introduce Username" maxlength = "15" required>
+            <input type="password" class = "form_textbox" id = "li_password" placeholder = "Introduce Password" pattern = "[0-9a-z]{1,30}" required>
+            <input class = "submit_btn" id = "submit_login" type= "submit" value= "Log In">
+            <h3 class = "li_or"><span>OR</span></h3>
+            <p id = "li_sign_up">Sign Up ></p>
+            <p id = "li_guest">Enter As Guest ></p>
+          </form>
+
+          <form class= "pu_forms" id="mp_signup_pu" method = "post">
+            <button class = "close_btn" id = "su-close">&times;</button>
+            <h2>Tell us about yourself</h2>
+            <input type="text" class = "form_textbox" id = "su_username" placeholder = "Introduce Username" maxlength = "15" required>
+            <input type="email" class = "form_textbox" id = "su_email" placeholder = "Introduce Email" required>
+            <input type="password" class = "form_textbox" id = "su_password" placeholder = "Introduce Password" pattern = "[0-9a-z]{1,30}" required>
+            <input class = "submit_btn" id = "submit_signup" type= "submit" value= "Submit">
+            <h3 class = "li_or"><span>OR</span></h3>
+            <div id= "google_signup">
+              <img src="./images/google_logo.png" alt="">
+              <p>Continue with Google</p>
+            </div>
+            <div id= "fb_signup">
+              <img src="./images/fb_logo.png" alt="">
+              <p>Continue with Facebook</p>
+            </div>
+          </form>
+
+          <div class = "experience" id = "cliff">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_1.jpeg" alt="user1">
+              <p class = "author_tag">@user1</p>
+              <div class = "photo_container">
+                  <img src="./images/desierto.jpg" alt="Desert">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Vermilion Cliffs</h1>
+                <p class = "description_titles"><b>Place:</b> Arizona, USA</h1>
+                <p class = "description_titles"><b>Budget:</b> $2000</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_2.jpg" alt="user2">
+                      <p class = "comment_description"><b>User2</b> Yooooo nice knife dude, holy shit!</p>
+                    </div>
+
+                </div>
+
+              </div>
+          </div>
+
         </div>
+        </div>
+
+        <!--POPUPS SECTION END-->
+
         <footer>
             <div id = "links_footer_div">
                 <a class = "links_footer" id = "link_T&C" href = "">Terms and conditions</a>

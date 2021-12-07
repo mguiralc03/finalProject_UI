@@ -15,7 +15,12 @@ $(document).ready(function(){
       var password = $("#li_password").val();
       // Implement checkCookie
       if(checkCookie(username, password)){
+        setCookie("logged", "true");
         window.location.href= 'index.html';
+        var myArray = getCookie(username);
+        myArray = myArray.split(",");
+        email = myArray[0];
+        setCookie("userlogged", username + "," + email);
         $('#login_pu').each(function(){
           this.reset();
         });
@@ -33,40 +38,95 @@ $(document).ready(function(){
       var cookie = email + "," + password;
       var available = getCookie(username);
       if(available == ""){
-        setCookie(username, cookie);
+          setCookie(username, cookie);
+          setCookie("logged", "true");
+          setCookie("userlogged", username + "," + email);
+          window.location.href= 'index.html';
+          $('#signup_pu').each(function(){
+            this.reset();
+          });
+
+      }else{
+          alert("This username already exists");
+          $('#submit_signup').each(function(){
+            this.reset();
+          });
+      }
+
+    });
+
+    $("#mp_login_pu").submit(function(e){
+      e.preventDefault();
+      var username = $("#li_username").val();
+      var password = $("#li_password").val();
+      // Implement checkCookie
+      if(checkCookie(username, password)){
         setCookie("logged", "true");
-        window.location.href= 'index.html';
-        $('#signup_pu').each(function(){
+        var myArray = getCookie(username);
+        myArray = myArray.split(",");
+        email = myArray[0];
+        setCookie("userlogged", username + "," + email);
+        $('#mp_form_container').css("display", "none");
+        $('#overlay').fadeOut();
+        $("body").css("overflow-y", "scroll");
+        setCookie("scroll", "close");
+        $('#login_pu').each(function(){
           this.reset();
         });
+      }
+      $('#login_pu').each(function(){
+        this.reset();
+      });
+    });
+
+    $("#mp_signup_pu").submit(function(e){
+      e.preventDefault();
+      var username = $("#su_username").val();
+      var email = $("#su_email").val();
+      var password = $("#su_password").val();
+      var cookie = email + "," + password;
+      var available = getCookie(username);
+      if(available == ""){
+          setCookie(username, cookie);
+          setCookie("logged", "true");
+          setCookie("userlogged", username + "," + email);
+          $('#mp_form_container').css("display", "none");
+          $("#overlay").fadeOut();
+          $("body").css("overflow-y", "scroll");
+          setCookie("scroll", "close");
+          $('#signup_pu').each(function(){
+            this.reset();
+          });
+
       }else{
-        alert("This username already exists");
-        $('#submit_signup').each(function(){
-          this.reset();
+          alert("This username already exists");
+          $('#submit_signup').each(function(){
+            this.reset();
           });
       }
 
     });
 
     $("#google_signup, #fb_signup").on("click", function(e){
-      e.preventDefault();
-      var username = "Bentley";
-      var email = "bgirard@gmail.com";
-      var password = "canada";
-      var cookie = email + "," + password;
-      setCookie(username, cookie);
-      setCookie("logged", "true");
-      window.location.href= 'index.html';
+        e.preventDefault();
+        var username = "Bentley";
+        var email = "bgirard@gmail.com";
+        var password = "canada";
+        var cookie = email + "," + password;
+        setCookie(username, cookie);
+        setCookie("logged", "true");
+        setCookie("userlogged", username + "," + email);
+        window.location.href= 'index.html';
     });
 
     $("#li_guest").on("click", function(){
-      setCookie("logged", "false");
-      window.location.href= 'index.html';
+        setCookie("logged", "false");
+        window.location.href= 'index.html';
     });
 
     $("#li_sign_up").on("click", function(){
-      document.querySelector('#signup_pu').style.display = 'flex';
-      document.querySelector('#login_pu').style.display = 'none';
+        document.querySelector('#signup_pu').style.display = 'flex';
+        document.querySelector('#login_pu').style.display = 'none';
     });
     // COVER PAGE STYLING ENDS HERE
 
@@ -291,6 +351,33 @@ $(document).ready(function(){
 
     $(".fa-ellipsis-v").click(function(){
         if (getCookie("scroll") == "close"){
+            if (checkLogged()){
+                  $("#myprofile").css("display", "block");
+                  $("#myprofile_dot").css("display", "block");
+
+                  $("#mycollections").css("display", "block");
+                  $("#mycollections_dot").css("display", "block");
+
+                  $("#addexperience").css("display", "block");
+                  $("#addexperience_dot").css("display", "block");
+
+                  $("#dmessages").css("display", "block");
+                  $("#dmessages_dot").css("display", "block");
+
+                  $("#logout").css("display", "inline-flex");
+
+                  $("#su_option").css("display", "none");
+                  $("#su_dot").css("display", "none");
+
+                  $("#li_option").css("display", "none");
+
+
+                  var logged_cookie = getCookie("userlogged");
+                  var myArray = logged_cookie.split(',');
+                  document.getElementById("name").innerText = myArray[0];
+                  $("#email").css("display", "flex");
+                  document.getElementById("email").innerText = myArray[1];
+            }
             $("#side_menu").animate({width:'toggle'},350);
             $("body").css("overflow-y", "hidden");
             setCookie("scroll", "open");
@@ -302,29 +389,34 @@ $(document).ready(function(){
         }
     });
 
-    if (checkLogged()){
-          $("#myprofile").css("display", "block");
-          $("#myprofile_dot").css("display", "block");
+    $("#su_option").click(function(e){
+        e.preventDefault();
+        $("#overlay").fadeIn();
+        $("#side_menu").animate({width:'toggle'},350);
+        $("#mp_form_container").css("display", "flex");
+        $("#mp_signup_pu").css("display", "flex");
+    });
 
-          $("#mycollections").css("display", "block");
-          $("#mycollections_dot").css("display", "block");
+    $("#li_option").click(function(e){
+        e.preventDefault();
+        $("#overlay").fadeIn();
+        $("#side_menu").animate({width:'toggle'},350);
+        $("#mp_form_container").css("display", "flex");
+        $("#mp_login_pu").css("display", "flex");
+        $(".li_or").css("display", "none");
+        $("#li_sign_up").css("display", "none");
+        $("#li_guest").css("display", "none");
+    });
 
-          $("#addexperience").css("display", "block");
-          $("#addexperience_dot").css("display", "block");
-
-          $("#dmessages").css("display", "block");
-
-          $("#logout").css("display", "inline-flex");
-
-          $("#su_option").css("display", "none");
-          $("#su_dot").css("display", "none");
-
-          $("#li_option").css("display", "none");
-
-          document.getElementById("name").innerHTML = username;
-          var myArray = getCookie(username);
-          document.getElementById("email").innerHTML = myArray[0];
-    }
+    $(".close_btn").click(function(e){
+        e.preventDefault();
+        $("body").css("overflow-y", "scroll");
+        setCookie("scroll", "close");
+        $("#overlay").fadeOut();
+        $("#mp_form_container").fadeOut();
+        $("#mp_signup_pu").fadeOut();
+        $("#mp_login_pu").fadeOut();
+    });
 
     $('#lo_option').click(function(){
       setCookie("logged", "false");
@@ -332,6 +424,11 @@ $(document).ready(function(){
 
 
     // ----- RANKINGS STYLE -----
+    $('#link_Home, #home_icon').click(function(e){
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+
     $('#link_Rankings, #icon_rankings').click(function(e){
       e.preventDefault();
       window.location.href= 'rankings.html';
@@ -364,10 +461,145 @@ $(document).ready(function(){
       $('#all_time_option').css("color", "#000000");
     });
 
-    $('#home_icon').click(function(e){
-      e.preventDefault();
-      window.location.href= 'index.html';
+    /*Rankings follwing buttons -> Change depending on whether you're
+    following that user or not (all buttons corresponding to that user must change)*/
+    $('.follow_btn_u1').click(function(){
+      if(checkLogged()){
+        var follow = document.querySelector('.follow_btn_u1').innerText;
+        if(follow == "Follow"){
+          document.querySelector('.follow_btn_u1').innerText = "Following";
+          $('.follow_btn_u1').css("color", "white");
+          $('.follow_btn_u1').css("background", "rgb(153, 136, 121)");
+        }
+        else{
+          document.querySelector('.follow_btn_u1').innerText = "Follow";
+          $('.follow_btn_u1').css("color", "rgb(153, 136, 121)");
+          $('.follow_btn_u1').css("background", "white");
+        }
+    }else{
+      alert("Please log in or sign up to follow users");
+    }
+
     });
+
+    $('.follow_btn_u3').click(function(){
+      if(checkLogged()){
+        var follow = document.querySelector('.follow_btn_u3').innerText;
+        if(follow == "Follow"){
+          document.querySelector('.follow_btn_u3').innerText = "Following";
+          $('.follow_btn_u3').css("color", "white");
+          $('.follow_btn_u3').css("background", "rgb(153, 136, 121)");
+        }
+        else{
+          document.querySelector('.follow_btn_u3').innerText = "Follow";
+          $('.follow_btn_u3').css("color", "rgb(153, 136, 121)");
+          $('.follow_btn_u3').css("background", "white");
+        }
+    }else{
+      alert("Please log in or sign up to follow users");
+    }
+
+    });
+
+    $('.follow_btn_u5').click(function(){
+      if(checkLogged()){
+        var follow = document.querySelector('.follow_btn_u5').innerText;
+        var x = document.getElementsByClassName('follow_btn_u5');
+        if(follow == "Follow"){
+          for(var i = 0; i < x.length; i++){
+            x[i].innerText = "Following"
+          }
+          document.querySelector('.follow_btn_u5').innerText = "Following";
+          $('.follow_btn_u5').css("color", "white");
+          $('.follow_btn_u5').css("background", "rgb(153, 136, 121)");
+        }
+        else{
+          for(var i = 0; i < x.length; i++){
+            x[i].innerText = "Follow"
+          }
+          document.querySelector('.follow_btn_u5').innerText = "Follow";
+          $('.follow_btn_u5').css("color", "rgb(153, 136, 121)");
+          $('.follow_btn_u5').css("background", "white");
+        }
+    }else{
+      alert("Please log in or sign up to follow users");
+    }
+
+    });
+
+    $('.follow_btn_u6').click(function(){
+      if(checkLogged()){
+        var follow = document.querySelector('.follow_btn_u6').innerText;
+        var x = document.getElementsByClassName('follow_btn_u6');
+        if(follow == "Follow"){
+          for(var i = 0; i < x.length; i++){
+            x[i].innerText = "Following"
+          }
+          document.querySelector('.follow_btn_u6').innerText = "Following";
+          $('.follow_btn_u6').css("color", "white");
+          $('.follow_btn_u6').css("background", "rgb(153, 136, 121)");
+        }
+        else{
+          for(var i = 0; i < x.length; i++){
+            x[i].innerText = "Follow"
+          }
+          document.querySelector('.follow_btn_u6').innerText = "Follow";
+          $('.follow_btn_u6').css("color", "rgb(153, 136, 121)");
+          $('.follow_btn_u6').css("background", "white");
+        }
+    }else{
+      alert("Please log in or sign up to follow users");
+    }
+
+    });
+
+    $('.follow_btn_u7').click(function(){
+      if(checkLogged()){
+        var follow = document.querySelector('.follow_btn_u7').innerText;
+        var x = document.getElementsByClassName('follow_btn_u7');
+        if(follow == "Follow"){
+          for(var i = 0; i < x.length; i++){
+            x[i].innerText = "Following"
+          }
+          document.querySelector('.follow_btn_u7').innerText = "Following";
+          $('.follow_btn_u7').css("color", "white");
+          $('.follow_btn_u7').css("background", "rgb(153, 136, 121)");
+        }
+        else{
+          for(var i = 0; i < x.length; i++){
+            x[i].innerText = "Follow"
+          }
+          document.querySelector('.follow_btn_u7').innerText = "Follow";
+          $('.follow_btn_u7').css("color", "rgb(153, 136, 121)");
+          $('.follow_btn_u7').css("background", "white");
+        }
+    }else{
+      alert("Please log in or sign up to follow users");
+    }
+
+    });
+
+    $('.follow_btn_u8').click(function(){
+      if(checkLogged()){
+        var follow = document.querySelector('.follow_btn_u8').innerText;
+        if(follow == "Follow"){
+          document.querySelector('.follow_btn_u8').innerText = "Following";
+          $('.follow_btn_u8').css("color", "white");
+          $('.follow_btn_u8').css("background", "rgb(153, 136, 121)");
+        }
+        else{
+          document.querySelector('.follow_btn_u8').innerText = "Follow";
+          $('.follow_btn_u8').css("color", "rgb(153, 136, 121)");
+          $('.follow_btn_u8').css("background", "white");
+        }
+    }else{
+      alert("Please log in or sign up to follow users");
+    }
+
+    });
+
+
+
     // -----RANKINGS END -----
 });
 
