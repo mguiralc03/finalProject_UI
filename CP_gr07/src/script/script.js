@@ -416,10 +416,20 @@ $(document).ready(function(){
         $("#mp_form_container").fadeOut();
         $("#mp_signup_pu").fadeOut();
         $("#mp_login_pu").fadeOut();
+        $("#profile_form_container").fadeOut();
+        $("#edit_profile").fadeOut();
+        $(".add_experience").fadeOut();
     });
 
     $('#lo_option').click(function(){
       setCookie("logged", "false");
+    });
+//Add experience POPUP in Main PAGE
+    $('#addexperience').click(function(e){
+      e.preventDefault();
+      $("#mp_form_container").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("#add_experience").css("display", "flex");
     });
 
 // Experiences POPUPS in Main Page
@@ -436,11 +446,129 @@ $(document).ready(function(){
       }
     });
 
+    $('#forest_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#autum").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#lavander_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#lavander").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#windmill_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#windmill").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#mountain_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#mountain").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#village_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#village").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#waterfall_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#waterfall").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#sea_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#sea").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#camells_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#cammels").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#beach_image').click(function(e){
+      e.preventDefault();
+      $('#filter_section').slideUp("slow");
+      $('#mp_form_container').css("display", "flex");
+      $("#beach").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
     $('#exp_close').click(function(e){
       e.preventDefault();
       $("#overlay").fadeOut();
       $('#mp_form_container').css("display", "none");
       $("#cliff").css("display","none");
+      $("#forest").css("display", "none");
       $("body").css("overflow-y", "scroll");
     });
 
@@ -653,6 +781,64 @@ $(document).ready(function(){
 
 
     // -----RANKINGS END -----
+
+
+    // MY PROFILE SECTION BEGINS
+    $('.change_banner').hover(function(){
+      $('.change_banner_btn').css("display", "block");
+    });
+
+    $('#settings, #settings_mobile').click(function(e){
+      e.preventDefault();
+      $("#overlay").fadeIn();
+      $("#side_menu").animate({width:'toggle'},350);
+      $("#profile_form_container").css("display", "flex");
+      $("#edit_profile").css("display", "flex");
+    });
+
+    $('#change_username_btn').click(function(){
+      var user_info = getCookie("userlogged");
+      user_info = user_info.split(",");
+      var new_username = $('#edit_username').val();
+      var old_user = getCookie(user_info[0]);
+      old_user = old_user.split(',');
+      var new_cookie = old_user[0] + "," + old_user[1];
+      if(confirm("Do you want to change your username?")){
+        $.cookie(user_info[0], null);
+        setCookie(new_username, new_cookie);
+        setCookie("userlogged", new_username + "," + old_user[0]);
+        $('#edit_username').val() = "";
+      }
+    });
+
+    $('#change_mail_btn').click(function(){
+      var user_info = getCookie("userlogged");
+      user_info = user_info.split(",");
+      var new_email = $('#edit_email').val();
+      var old_user = getCookie(user_info[0]);
+      old_user = old_user.split(',');
+      var new_cookie = new_email + "," + old_user[1];
+      if(confirm("Do you want to change your email?")){
+        setCookie(user_info[0], new_cookie);
+        setCookie("userlogged", user_info[0] + "," + new_email);
+        $('#edit_email').val() = "";
+      }
+    });
+
+    $('#change_pass_btn').click(function(){
+      var user_info = getCookie("userlogged");
+      user_info = user_info.split(",");
+      var new_pass = $('#edit_password').val();
+      var old_user = getCookie(user_info[0]);
+      old_user = old_user.split(',');
+      var new_cookie = old_user[0] + "," + new_pass;
+      if(confirm("Do you want to change your email?")){
+        setCookie(user_info[0], new_cookie);
+        $('#edit_password').val() = "";
+      }
+    });
+
+    // MY PROFILE SECTION ENDS
 });
 
 

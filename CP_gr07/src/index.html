@@ -122,7 +122,7 @@
 
             <div class="gallery forest" value = "0">
               <a target="_blank" href="./images/autumwalk_home.jpg">
-                <img src="./images/autumwalk_home.jpg" alt="autumwalk" width="400" height="250">
+                <img  id = "forest_image" src="./images/autumwalk_home.jpg" alt="autumwalk" width="400" height="250">
               </a>
               <div class = "bottom-photos">
                   <a class="material-icons-outlined" id = "like2">favorite_border</a>
@@ -134,7 +134,7 @@
 
             <div class="gallery flowers" value = "0">
                 <a target="_blank" href="./images/lavanda.jpg">
-                  <img src="./images/lavanda.png" alt="lavander" width="400" height="250">
+                  <img id = "lavander_image" src="./images/lavanda.png" alt="lavander" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like3">favorite_border</a>
@@ -146,7 +146,7 @@
 
             <div class="gallery windmill" value = "0">
                 <a target="_blank" href="./images/molino.jpg">
-                  <img src="./images/molino.jpg" alt="windmill" width="400" height="250">
+                  <img id = "windmill_image" src="./images/molino.jpg" alt="windmill" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like4">favorite_border</a>
@@ -158,7 +158,7 @@
 
             <div class="gallery mountain" value = "100">
                 <a target="_blank" href="./images/mountain_home.jpg">
-                  <img src="./images/mountain_home.jpg" alt="mountain" width="400" height="250">
+                  <img id = "mountain_image" src="./images/mountain_home.jpg" alt="mountain" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like5">favorite_border</a>
@@ -170,7 +170,7 @@
 
             <div class="gallery village" value = "250">
                 <a target="_blank" href="./images/village-home.jpg">
-                  <img src="./images/village-home.jpg" alt="village" width="400" height="250">
+                  <img id = "village_image" src="./images/village-home.jpg" alt="village" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like6">favorite_border</a>
@@ -182,7 +182,7 @@
 
             <div class="gallery sea" value = "2000">
                 <a target="_blank" href="./images/acantilado.jpg">
-                  <img src="./images/acantilado.jpg" alt="Clif" width="400" height="250">
+                  <img id = "sea_image" src="./images/acantilado.jpg" alt="Clif" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like7">favorite_border</a>
@@ -194,7 +194,7 @@
 
             <div class="gallery camell" value = "2500">
                 <a target="_blank" href="./images/camellos.jpg">
-                  <img src="./images/camellos.jpg" alt="Camells" width="400" height="250">
+                  <img id = "camells_image" src="./images/camellos.jpg" alt="Camells" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like8">favorite_border</a>
@@ -206,7 +206,7 @@
 
             <div class="gallery waterfall" value = "3550">
                 <a target="_blank" href="./images/cascada.jpg">
-                  <img src="./images/cascada.jpg" alt="Waterfall" width="400" height="250">
+                  <img id = "waterfall_image" src="./images/cascada.jpg" alt="Waterfall" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like9">favorite_border</a>
@@ -218,7 +218,7 @@
 
             <div class="gallery beach" value = "250">
                 <a target="_blank" href="./images/playa.jpg">
-                  <img src="./images/playa.jpg" alt="Beach" width="400" height="250">
+                  <img  id = "beach_image" src="./images/playa.jpg" alt="Beach" width="400" height="250">
                 </a>
                 <div class = "bottom-photos">
                     <a class="material-icons-outlined" id = "like10">favorite_border</a>
@@ -261,6 +261,7 @@
             </div>
           </form>
 
+          <!--Cliff popup-->
           <div class = "experience" id = "cliff">
               <button class = "close_btn" id = "exp-close">&times;</button>
               <img class = "author" src="./images/user_1.jpeg" alt="user1">
@@ -288,7 +289,7 @@
                 <div class="comments_box">
                     <div class = "user_comment1">
                       <img src="./images/user_2.jpg" alt="user2">
-                      <p class = "comment_description"><b>user2</b> Yooooo nice knife dude, holy shit!</p>
+                      <p class = "comment_description"><b>user2</b> What a nice plan for doing with family</p>
                     </div>
 
                 </div>
@@ -296,6 +297,379 @@
                 <button class = "send_btn">SEND</button>
               </div>
           </div>
+
+          <!--Autum walk popup-->
+          <div class = "experience" id = "autum">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_5.jpg" alt="user5">
+              <p class = "author_tag">@user5</p>
+              <div class = "photo_container">
+                  <img src="./images/autumwalk_home.jpg" alt="Desert">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Autum walk</h1>
+                <p class = "description_titles"><b>Place:</b> EEUU</h1>
+                <p class = "description_titles"><b>Budget:</b> $0</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_2.jpg" alt="user2">
+                      <p class = "comment_description"><b>user2</b> So cool!</p>
+                    </div>
+                </div>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_8.jpg" alt="user8">
+                      <p class = "comment_description"><b>user8</b>In love with this place</p>
+                    </div>
+                </div>
+
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Lavander popup-->
+          <div class = "experience" id = "lavander">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_3.webp" alt="user3">
+              <p class = "author_tag">@user3</p>
+              <div class = "photo_container">
+                  <img src="./images/lavanda.png" alt="lavander">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Lavander heaven</h1>
+                <p class = "description_titles"><b>Place:</b> Brihuega, Spain</h1>
+                <p class = "description_titles"><b>Budget:</b> $0</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_5.jpg" alt="user5">
+                      <p class = "comment_description"><b>user2</b> Just amazing :) </p>
+                    </div>
+                </div>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_7.jpg" alt="user7">
+                      <p class = "comment_description"><b>user7</b>I wish I lived there</p>
+                    </div>
+                </div>
+
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Windmills popup-->
+          <div class = "experience" id = "windmill">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_2.jpg" alt="user2">
+              <p class = "author_tag">@user2</p>
+              <div class = "photo_container">
+                  <img src="./images/molino.jpg" alt="windmill">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Don Quijote windmills</h1>
+                <p class = "description_titles"><b>Place:</b> Guadalajara, Spain</h1>
+                <p class = "description_titles"><b>Budget:</b> $0</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_1.jpeg" alt="user1">
+                      <p class = "comment_description"><b>user1</b> In love with Sancho Panza</p>
+                    </div>
+                </div>
+
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Mountain popup-->
+          <div class = "experience" id = "mountain">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_1.jpeg" alt="user1">
+              <p class = "author_tag">@user1</p>
+              <div class = "photo_container">
+                  <img src="./images/mountain_home.jpg" alt="mountain">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Mountain over a lake </h1>
+                <p class = "description_titles"><b>Place:</b> EEUU </h1>
+                <p class = "description_titles"><b>Budget:</b> $100</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_3.webp" alt="user3">
+                      <p class = "comment_description"><b>user3</b> Realy need to swim in there</p>
+                    </div>
+                </div>
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Village popup-->
+          <div class = "experience" id = "village">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_7.jpg" alt="user7">
+              <p class = "author_tag">@user7</p>
+              <div class = "photo_container">
+                  <img src="./images/village-home.jpg" alt="village">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Human in nature</h1>
+                <p class = "description_titles"><b>Place:</b> Madrid, Spain</h1>
+                <p class = "description_titles"><b>Budget:</b> $250</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_4.jpg" alt="user4">
+                      <p class = "comment_description"><b>user4</b> How do people can live so far away from city?</p>
+                    </div>
+                </div>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_7.jpg" alt="user7">
+                      <p class = "comment_description"><b>user7</b> Love how nature mixes with humans</p>
+                    </div>
+                </div>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_8.jpg" alt="user8">
+                      <p class = "comment_description"><b>user8</b>Cool = )</p>
+                    </div>
+                </div>
+
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Sea popup-->
+          <div class = "experience" id = "sea">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_2.jpg" alt="user2">
+              <p class = "author_tag">@user2</p>
+              <div class = "photo_container">
+                  <img src="./images/acantilado.jpg" alt="sea">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Human in nature</h1>
+                <p class = "description_titles"><b>Place:</b> Alto, Norway</h1>
+                <p class = "description_titles"><b>Budget:</b> $2000</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_4.jpg" alt="user4">
+                      <p class = "comment_description"><b>user4</b> Such a beautiful place </p>
+                    </div>
+                </div>
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Camel popup-->
+          <div class = "experience" id = "cammels">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_3.webp" alt="user3">
+              <p class = "author_tag">@user3</p>
+              <div class = "photo_container">
+                  <img src="./images/camellos.jpg" alt="cammels">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Cammel trip</h1>
+                <p class = "description_titles"><b>Place:</b> Sahara, Morocco </h1>
+                <p class = "description_titles"><b>Budget:</b> $2500</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_8.jpg" alt="user8">
+                      <p class = "comment_description"><b>user4</b> Such a cool plan </p>
+                    </div>
+                </div>
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+
+          </div>
+
+          <!--Waterfall popup-->
+          <div class = "experience" id = "waterfall">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_5.jpg" alt="user5">
+              <p class = "author_tag">@user5</p>
+              <div class = "photo_container">
+                  <img src="./images/cascada.jpg" alt="waterfall">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Caribian waterfall </h1>
+                <p class = "description_titles"><b>Place:</b> El Yunque,Puerto Rico </h1>
+                <p class = "description_titles"><b>Budget:</b> $3550</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_4.jpg" alt="user4">
+                      <p class = "comment_description"><b>user4</b> I love the jungle</p>
+                    </div>
+                </div>
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+          <!--Beach popup-->
+          <div class = "experience" id = "beach">
+              <button class = "close_btn" id = "exp-close">&times;</button>
+              <img class = "author" src="./images/user_6.jpg" alt="user6">
+              <p class = "author_tag">@user6</p>
+              <div class = "photo_container">
+                  <img src="./images/playa.jpg" alt="beach">
+                  <div class = "icons">
+                    <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                    <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                    <div class= "space_between"></div>
+                    <i class="fa fa-share-alt fa-lg"></i>
+                    <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                    <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                  </div>
+              </div>
+              <div class="description_container">
+                <p class = "description_titles"><b>Title:</b> Paceful beach </h1>
+                <p class = "description_titles"><b>Place:</b> Costa Rica </h1>
+                <p class = "description_titles"><b>Budget:</b> $250</h1>
+                <p class = "description_titles"><b>Description:</b></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="comments">
+                <h1 class = "description_titles">Comments:</h1>
+                <div class="comments_box">
+                    <div class = "user_comment1">
+                      <img src="./images/user_5.jpg" alt="user5">
+                      <p class = "comment_description"><b>user5</b> Lovely </p>
+                    </div>
+                </div>
+                <input class= "comment_input" type="text" placeholder="Add a comment...">
+                <button class = "send_btn">SEND</button>
+              </div>
+          </div>
+
+
+
+          <form class = "add_experience" method="post">
+            <button class = "close_btn" id = "exp-close">&times;</button>
+            <h2>Tell us about your experience</h2>
+            <div id = "add_image">
+                <input type = "file" id = "new_exp_photo" name = "image" accept="image/*">
+            </div>
+
+            <div class="description_container">
+              <input class = "form_textbox" type = "text" id = "exp_input_title" placeholder = "Add a title" maxlength = "20" required>
+              <input class = "form_textbox" type = "text" id = "exp_input_place" placeholder = "Add a location" maxlength = "20" required>
+              <input class = "form_textbox" type = "text" id = "exp_input_budget" placeholder = "Add a budget" maxlength = "5" required>
+              <input class = "form_textbox" type = "text" id = "exp_input_tags" placeholder = "Add tags">
+              <textarea class = "form_textbox" type = "text" id = "exp_input_description" placeholder = "Add a description" cols = "18" rows = "8" maxlength = "200" required></textarea>
+            </div>
+            <input class = "submit_btn" type = "submit" id = "submit_btn_exp" value = "Submit">
+            <input class = "submit_btn" id = "delete_btn_exp" type = "reset" value = "Delete">
+          </form>
 
         </div>
         </div>

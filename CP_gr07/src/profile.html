@@ -14,60 +14,175 @@
                     <img class ="logo_ontrip" src="./images/logo_wapo.png" alt="logo_ontrip">
                 </div>
                 <div id = "links_header_section">
-                    <a class = "links_header" id = "link_AboutUs_rank" href = "">ABOUT US</a>
-                    <a class = "links_header" id = "link_Home_rank" href = "./index.html">HOME</a>
-                    <i class = "fa fa-home fa-lg" id = "home_icon"></i>
+                    <a class = "links_header" id = "link_AboutUs_prof" href = "">ABOUT US</a>
+                    <a class = "links_header" id = "link_Home_prof" href = "./index.html">HOME</a>
+                    <a class = "links_header" id = "link_Rankings_prof">RANKINGS</a>
+                    <div id = "icons_profile">
+                      <i class = "fa fa-home fa-lg" id = "home_icon_profile"></i>
+                      <span class = "material-icons-outlined" id = "icon_rankings">leaderboard</span>
+                    </div>
                 </div>
                 <a class="fa fa-ellipsis-v fa-2x"></a>
             </header>
+            <div id = "overlay"></div>
+            <div class="container" id = "container_prof">
 
-            <div class = "container">
-                <div id = "profile_banner">
-                    <img src = "./images/banner.jpg">
-                </div>
-                <div id = "info_container" >
-                  <div id = "profile_general_info">
-                      <div id = "profile_img_div">
-                          <img src = "./images/icon-user-default.png">
-                      </div>
-                      <div id = "profile_desc">
-                        <h2 id = "pname">User Name</h2>
-                        <p id = "puser">@user</p>
-                      </div>
-                  </div>
-                  <div id = "profile_detailed_info">
-                      <div id = "stats">
-                          <div id = followers_div>
-                              <h2 id = "fnumber">0</h2>
-                              <h2 id = "ftext">Followers</h2>
-                          </div>
-                          <div id = posts_div>
-                              <h2 id = "posts_number">0</h2>
-                              <h2 id = "posts_text">Posts</h2>
-                          </div>
-                      </div>
-
-                      <div id = "sub_info">
-                          <div id = location>
-                              <a class="fa fa-map-marker"></a>
-                              <p id = "location_text"> Location</p>
-                          </div>
-                          <div id = join_date>
-                              <a class="fa fa-calendar" ></a>
-                              <p id = "joined_text">Joined</p>
-                          </div>
-                          <div id = my_collections>
-                              <button class = "profile_btn" id = my_collections_btn>My Collections</button>
-                          </div>
-                          <div id = add_experience>
-                              <button class = "profile_btn" id = add_experience_btn>Add new experience</button>
-                          </div>
-                          <div id = settings>
-                              <i class="fa fa-cog fa-2x "></i>
-                          </div>
+              <!--Side menu-->
+              <div id = "side_menu">
+                  <div id = "profile_data">
+                    <div id = "profile_img">
+                      <img src = "./images/icon-user-default.png" alt = "default_profile">
+                      <div id = "user_information">
+                          <h2 id= "name">Guest Profile</h2>
+                          <p id = "email"></p>
                       </div>
                     </div>
-                </div>
+                  </div>
+                  <div id = "side_options">
+                      <div class = "option">
+                          <a id = "myprofile">My Profile</a>
+                      </div>
+                      <p id = "myprofile_dot">·</p>
+                      <div class = "option">
+                          <a id = "mycollections">My Collections</a>
+                      </div>
+                      <p id = "mycollections_dot">·</p>
+                      <div class = "option">
+                          <a id = "addexperience">Add Experience</a>
+                      </div>
+                      <p id = "addexperience_dot">·</p>
+                      <div class = "option">
+                          <a id = "dmessages">Direct Messages</a>
+                      </div>
+                      <p id = "dmessages_dot">·</p>
+                      <div class = "option">
+                          <a id = "aboutus">About Us</a>
+                      </div>
+                      <p id = "aboutus_dot">·</p>
+                      <div class = "option">
+                          <a id = "su_option" href = "./login-signup.html">Sign Up</a>
+                      </div>
+                      <p id = "su_dot">·</p>
+                      <div class = "option">
+                          <a id = "li_option" href = "./login-signup.html">Log In</a>
+                      </div>
+                  </div>
+                  <div id = "logout">
+                      <a id = "lo_option" href = "./login-signup.html">Log Out</a>
+                      <i class="fa fa-cog"></i>
+                  </div>
+              </div>
+              <!--Side menu END-->
+
+              <div class = "margin">
+
+              </div>
+              <div class = "profile_container">
+                  <div id = "profile_banner">
+                      <img src = "./images/banner.jpg">
+                  </div>
+                  <div id = "info_container" >
+                    <div id = "profile_general_info">
+                        <div id = "profile_img_div">
+                            <img src = "./images/icon-user-default.png">
+                        </div>
+                        <div id = "profile_desc">
+                          <h2 id = "puser">@user</h2>
+                        </div>
+                    </div>
+                    <div id = "profile_detailed_info">
+                        <div id = "stats">
+                            <div id = followers_div>
+                                <h2 id = "fnumber">0</h2>
+                                <h2 id = "ftext">Followers</h2>
+                            </div>
+                            <div id = "posts_div">
+                                <h2 id = "posts_number">0</h2>
+                                <h2 id = "posts_text">Posts</h2>
+                            </div>
+                        </div>
+
+                        <div id = "sub_info">
+                            <div id = "location">
+                                <a class="fa fa-map-marker"></a>
+                                <p id = "location_text"> Location</p>
+                            </div>
+                            <div id = "join_date">
+                                <a class="fa fa-calendar" ></a>
+                                <p id = "joined_text">Joined 11/01/2001</p>
+                            </div>
+                            <div id = "my_collections">
+                                <button class = "profile_btn" id = my_collections_btn>My Collections</button>
+                            </div>
+                            <div id = "add_experience">
+                                <button class = "profile_btn" id = add_experience_btn>Add new experience</button>
+                            </div>
+                            <div id = "settings">
+                                <i class="fa fa-cog fa-2x "></i>
+                            </div>
+                            <div id = "settings_mobile">
+                                <i class="fa fa-cog fa-lg "></i>
+                            </div>
+                            <div id = "mp_tablet_btns">
+                              <div id = "add_experience_tablet">
+                                  <button class = "profile_btn" id = "add_experience_btn_tablet">Add new experience</button>
+                              </div>
+                              <div id = "my_collections_tablet">
+                                  <button class = "profile_btn" id = "my_collections_btn_tablet">My Collections</button>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div id = "posts_container">
+                  <div id = "profile_images">
+                    <!-- <div class="user_experiences cliff" value = "2000">
+                        <a target="_blank">
+                          <img id = "cliff_image" src="" alt="Vermilion Cliffs" width="100" height="150">
+                        </a>
+                    </div> -->
+                  </div>
+              </div>
+              <div class = "margin">
+
+              </div>
+              <div class= "li_form_container" id = "profile_form_container">
+                <form class="pu_forms" id = "edit_profile"method = "post">
+                  <div id="edit_pf_header">
+                    <h2>Edit Profile</h2>
+                    <button class = "close_btn" id = "edit-close">&times;</button>
+                  </div>
+                  <h2>Profile Picture</h2>
+                  <div class="edit_info">
+                    <img src="./images/user_1.jpeg" alt="Profile Picture">
+                    <button class = "submit_btn" id = "change_pic_btn" type="file" value = "Choose Picture" ></button>
+                  </div>
+
+                  <h2>Banner</h2>
+                  <div class="change_banner">
+                    <button class = "change_banner_btn" type="file" value="Change Banner"></button>
+                  </div>
+
+                  <h2>Username</h2>
+                  <div class="edit_info">
+                    <input type="text" class = "form_textbox" id = "edit_username" placeholder = "Introduce Username" maxlength = "15">
+                    <input class = "submit_btn" id = "change_username_btn" type= "submit" value= "Change">
+                  </div>
+
+                  <h2>Email</h2>
+                  <div class="edit_info">
+                    <input type="email" class = "form_textbox" id = "edit_email" placeholder = "Introduce Email">
+                    <input class = "submit_btn" id = "change_mail_btn" type= "submit" value= "Change">
+                  </div>
+
+                  <h2>Password</h2>
+                  <div class="edit_info">
+                    <input type="password" class = "form_textbox" id = "edit_password" placeholder = "Introduce Password" pattern = "[0-9a-z]{1,30}">
+                    <input class = "submit_btn" id = "change_pass_btn" type= "submit" value= "Change">
+                  </div>
+                </form>
+              </div>
             </div>
 
             <footer>

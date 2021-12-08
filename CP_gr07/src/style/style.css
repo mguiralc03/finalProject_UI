@@ -323,6 +323,16 @@ header{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
 }
 
+#icons_profile{
+  display:flex;
+  vertical-align: middle;
+  justify-content: flex-end;
+}
+
+#home_icon_profile{
+    display: none;
+}
+
 /* Style for the logo */
 #header_logo_div{
     justify-content: center;
@@ -663,7 +673,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 #mp_form_container{
-  display:none;
+  display: none;
   position: relative;
   z-index: 5;
 }
@@ -675,6 +685,28 @@ input[type=range]::-moz-range-thumb {
 #mp_signup_pu{
   display:none;
 }
+
+.add_experience{
+  background: rgba(245, 225, 185);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 4px 4px 4px 4px rgba(74, 77, 76, 0.91);
+  border-radius: 6px;
+  vertical-align: middle;
+  margin:auto;
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 70%;
+  max-height: 80%;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+
 
 .experience{
   background: rgba(245, 225, 185);
@@ -996,6 +1028,20 @@ input[type=range]::-moz-range-thumb {
 
 /*Profile page style*/
 
+#container_prof{
+  display: flex;
+  flex-direction: row;
+}
+.margin{
+    height: 101%;
+    width: 10%;
+    background: rgba(238, 225, 206, 0.87);
+}
+
+.profile_container{
+    width: 80%;
+}
+
 #profile_banner{
     width: 100%;
     height: 17%;
@@ -1013,6 +1059,8 @@ input[type=range]::-moz-range-thumb {
     flex-direction: row;
     position: relative;
     top: -4%;
+    padding-bottom: 5px;
+    border-bottom: 3px solid black;
 }
 
 #profile_general_info{
@@ -1020,30 +1068,31 @@ input[type=range]::-moz-range-thumb {
     flex-direction: column;
     text-align:center;
     width: 33%;
-    margin-right: 13%;
 }
 
 #profile_img_div img{
     border-radius: 100px;
-    min-height: 40%;
-    min-width: 40%;
-    max-width: 40%;
+    min-height: 50px;
+    min-width: 50px;
+    max-width: 100px;
     object-fit: cover;
     border: 3px solid white;
 }
 
-#pname{
-    display: inline-flex;
-    font-size: 150%;
-}
 
 #puser{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #profile_detailed_info{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
+.fa-cog{
+    cursor: pointer;
 }
 
 #stats{
@@ -1062,7 +1111,7 @@ input[type=range]::-moz-range-thumb {
     flex-direction:row;
     align-items: center;
     flex-wrap: wrap;
-
+    justify-content: center;
 }
 
 #location, #join_date{
@@ -1090,6 +1139,57 @@ input[type=range]::-moz-range-thumb {
     border-radius: 10px;
     margin-right: 15px;
 }
+
+#mp_tablet_btns{
+  display:none;
+  justify-content: space-around;
+  flex-basis:90%;
+}
+
+#settings_mobile{
+    display: none;
+}
+
+.edit_info{
+  display:flex;
+  flex-wrap: wrap;
+  /* justify-content: center;  */
+}
+
+.edit_info img{
+  min-height: 80px;
+  max-height: 80px;
+  width: 80px;
+  min-width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#edit_pf_header{
+  border-bottom: 2px black;
+}
+
+
+
+.change_banner_btn{ /*On hover display this button*/
+  display:none
+}
+
+.change_banner{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../images/coverMountain.jpeg") no-repeat;
+  background-size: cover;
+  width:80%;
+}
+
+.change_banner:hover{
+  -webkit-filter: brightness(70%);
+}
+
+
+/* MY PROFILE SECTION ENDS */
 
 /* Footer style */
 footer{
@@ -1351,19 +1451,28 @@ footer{
   display:none;
 }
 
-@media(max-width: 1120px){
+@media only screen and (max-width: 1120px){
   .ranked_experience{
     width: 85%;
   }
 
 }
 
-@media(max-width: 960px){
+@media only screen and (max-width: 960px){
   .ranked_experience{
     width: 100%;
   }
 
-@media(max-width: 730px){
+  .margin{
+      width: 0;
+  }
+
+  .profile_container{
+      width: 100%;
+  }
+
+
+@media only screen and (max-width: 730px){
   .ranked_experience {
     display: flex;
     justify-content: none;
@@ -1409,6 +1518,21 @@ footer{
     .comment_input{
         width: 60%;
     }
+
+    #mp_tablet_btns{
+      display:flex;
+
+    }
+
+    #my_collections, #add_experience{
+      display:none;
+    }
+
+}
+@media only screen and (max-width: 1100px){
+
+
+
 }
 
 @media  only screen and (max-width: 1000px){
@@ -1467,6 +1591,13 @@ footer{
     .comment_input{
         width: 60%;
     }
+
+    #profile_img_div img{
+      min-height: 50px;
+      min-width: 50px;
+      max-width: 80px;
+    }
+
 }
 
 @media  only screen and (max-width: 700px){
@@ -1503,6 +1634,13 @@ footer{
         display: inline-flex;
         justify-content: center;
         cursor: pointer;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    #home_icon_profile{
+        display: inline-flex;
+        cursor: pointer;
     }
 
     #search_input{
@@ -1516,7 +1654,15 @@ footer{
 
     #icon_rankings{
         display: inline-flex;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
+        margin-left: 15px;
+    }
+
+    #icons_profile{
+        align-items: center;
+
     }
 
     #link_AboutUs{
@@ -1604,7 +1750,8 @@ footer{
         justify-content: center;
     }
 
-    #link_Rankings_exp, #link_Home_exp{
+    #link_Rankings_exp, #link_Home_exp, #link_Rankings_prof,
+    #link_Home_prof, #link_AboutUs_prof, #link_AboutUs_rank{
         display: none;
     }
 
@@ -1641,4 +1788,37 @@ footer{
         background-color: black;
         color: white;
     }
+
+    .profile_btn{
+        display: none;
+    }
+
+
+    #settings_mobile{
+        display: flex;
+    }
+    #settings{
+        display: none;
+    }
+
+    #puser{
+        font-size: 18px;
+    }
+
+    #location{
+        font-size: 12px;
+    }
+
+    #join_date{
+        font-size: 12px;
+        margin-right: 15px;
+    }
+
+    #followers_div{
+        font-size: 13px;
+    }
+    #posts_div{
+        font-size: 13px;
+    }
+
 }
