@@ -844,6 +844,7 @@ $(document).ready(function(){
     });
 
     // MY PROFILE SECTION ENDS
+
 });
 
 

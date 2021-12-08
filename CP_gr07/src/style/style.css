@@ -1213,6 +1213,7 @@ footer{
     padding: 5px;
     justify-content: center;
     margin: 15px;
+    cursor: pointer;
 }
 
 .links_footer{
