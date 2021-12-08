@@ -20,6 +20,7 @@ $(document).ready(function(){
         var myArray = getCookie(username);
         myArray = myArray.split(",");
         email = myArray[0];
+        setCookie( email, "");
         setCookie("userlogged", username + "," + email);
         $('#login_pu').each(function(){
           this.reset();
@@ -35,11 +36,12 @@ $(document).ready(function(){
       var username = $("#su_username").val();
       var email = $("#su_email").val();
       var password = $("#su_password").val();
-      var cookie = email + "," + password;
+      var cookie = email + "," + password + "icon-user-default.png" +"coverMountain.jpeg";
       var available = getCookie(username);
       if(available == ""){
           setCookie(username, cookie);
           setCookie("logged", "true");
+          setCookie( email, "");
           setCookie("userlogged", username + "," + email);
           window.location.href= 'index.html';
           $('#signup_pu').each(function(){
@@ -62,6 +64,7 @@ $(document).ready(function(){
       // Implement checkCookie
       if(checkCookie(username, password)){
         setCookie("logged", "true");
+        setCookie( email, "");
         var myArray = getCookie(username);
         myArray = myArray.split(",");
         email = myArray[0];
@@ -112,7 +115,9 @@ $(document).ready(function(){
         var username = "Bentley";
         var email = "bgirard@gmail.com";
         var password = "canada";
-        var cookie = email + "," + password;
+        var pic = "BentleyGirard.png"
+        var banner = "coverMountain.jpeg"
+        var cookie = email + "," + password + "," + pic + "," + banner;
         setCookie(username, cookie);
         setCookie("logged", "true");
         setCookie("userlogged", username + "," + email);
@@ -374,10 +379,14 @@ $(document).ready(function(){
 
                   var logged_cookie = getCookie("userlogged");
                   var myArray = logged_cookie.split(',');
+                  var user_info = getCookie(myArray[0]);
+                  user_info = user_info.split(',');
                   document.getElementById("name").innerText = myArray[0];
                   $("#email").css("display", "flex");
                   document.getElementById("email").innerText = myArray[1];
+                  $('#profile_img img').attr("src", "./images/" + user_info[2]);
             }
+
             $("#side_menu").animate({width:'toggle'},350);
             $("body").css("overflow-y", "hidden");
             setCookie("scroll", "open");
@@ -392,6 +401,11 @@ $(document).ready(function(){
     $("#myprofile").click(function(e){
         e.preventDefault();
         window.location.href = 'profile.html';
+    });
+
+    $('#mycollections').click(function(e){
+      e.preventDefault();
+      window.location.href= 'collections.html';
     });
 // SIGNUP AND LOGIN POPUPS WITHIN MAIN PAGE
     $("#su_option").click(function(e){
@@ -421,21 +435,70 @@ $(document).ready(function(){
         $("#mp_form_container").fadeOut();
         $("#mp_signup_pu").fadeOut();
         $("#mp_login_pu").fadeOut();
-        $("#profile_form_container").fadeOut();
         $("#edit_profile").fadeOut();
-        $(".add_experience").fadeOut();
+        $("#add_collection_form").fadeOut();
+        $(".add_experience_form").fadeOut();
+        $("#profile_form_container").fadeOut();
     });
 
     $('#lo_option').click(function(){
       setCookie("logged", "false");
     });
-//Add experience POPUP in Main PAGE
+
+//Add experience POPUP in  myprofile PAGE
+    $('#add_experience').click(function(e){
+      e.preventDefault();
+      $("#overlay").fadeIn();
+      $("#profile_form_container").css("display", "flex");
+      $(".add_experience_form").css("display", "flex");
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
+    $('#add_experience_tablet').click(function(e){
+      e.preventDefault();
+      $("#overlay").fadeIn();
+      $("#profile_form_container").css("display", "flex");
+      $(".add_experience_form").css("display", "flex");
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
+    });
+
     $('#addexperience').click(function(e){
       e.preventDefault();
-      $("#mp_form_container").css("display", "flex");
       $("#overlay").fadeIn();
-      $("#add_experience").css("display", "flex");
+      $("#profile_form_container").css("display", "flex");
+      $(".add_experience_form").css("display", "flex");
+      $("body").css("overflow-y", "hidden");
+      if (getCookie("scroll") == "open"){
+        $("#side_menu").animate({width:'toggle'},350);
+        setCookie("scroll", "close");
+      }
     });
+
+    $("#addexp_form").submit(function(e){
+      e.preventDefault();
+      var user_info = getCookie("userlogged");
+      user_info = user_info.split(",");
+      var exp_title = $("#exp_input_title").val();
+      var cname = user_info[0] + exp_title;
+      var exp_photo = document.getElementById("new_exp_photo").files[0].name;
+      var exp_place = $("#exp_input_place").val();
+      var exp_budget = $("#exp_input_budget").val();
+      var exp_tags = $("#exp_input_tags").val();
+      var exp_collaborator = $("#exp_input_collaborator").val();
+      var exp_desc = $("#exp_input_description").val();
+      var cvalue = exp_title + "," + exp_photo + "," + exp_place + "," + exp_budget + ","
+      + exp_tags + "," + exp_collaborator + "," + exp_desc;
+      setCookie(cname, cvalue);
+    });
+
 
 // Experiences POPUPS in Main Page
     $('#cliff_image').click(function(e){
@@ -789,61 +852,206 @@ $(document).ready(function(){
 
 
     // MY PROFILE SECTION BEGINS
-    $('.change_banner').hover(function(){
-      $('.change_banner_btn').css("display", "block");
-    });
-
     $('#settings, #settings_mobile').click(function(e){
       e.preventDefault();
       $("#overlay").fadeIn();
-      $("#side_menu").animate({width:'toggle'},350);
       $("#profile_form_container").css("display", "flex");
       $("#edit_profile").css("display", "flex");
+      $('body').css("overflow-y", "hidden");
     });
 
-    $('#change_username_btn').click(function(){
+    $('#change_username_btn').click(function(e){
+      e.preventDefault();
       var user_info = getCookie("userlogged");
       user_info = user_info.split(",");
       var new_username = $('#edit_username').val();
       var old_user = getCookie(user_info[0]);
       old_user = old_user.split(',');
-      var new_cookie = old_user[0] + "," + old_user[1];
+      var new_cookie = old_user[0] + "," + old_user[1] + ","+ old_user[2] + "," + old_user[3];;
       if(confirm("Do you want to change your username?")){
-        $.cookie(user_info[0], null);
+        document.cookie = user_info[0] + "= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
         setCookie(new_username, new_cookie);
         setCookie("userlogged", new_username + "," + old_user[0]);
-        $('#edit_username').val() = "";
+        $('#edit_username').val('');
+        $('#puser').text("@" + new_username);
       }
     });
 
-    $('#change_mail_btn').click(function(){
+    $('#change_mail_btn').click(function(e){
+      e.preventDefault();
       var user_info = getCookie("userlogged");
       user_info = user_info.split(",");
       var new_email = $('#edit_email').val();
       var old_user = getCookie(user_info[0]);
       old_user = old_user.split(',');
-      var new_cookie = new_email + "," + old_user[1];
+      var new_cookie = new_email + "," + old_user[1] + ","+ old_user[2] + "," + old_user[3];;
       if(confirm("Do you want to change your email?")){
         setCookie(user_info[0], new_cookie);
         setCookie("userlogged", user_info[0] + "," + new_email);
-        $('#edit_email').val() = "";
+        $('#edit_email').val('');
       }
     });
 
-    $('#change_pass_btn').click(function(){
+    $('#change_pass_btn').click(function(e){
+      e.preventDefault();
       var user_info = getCookie("userlogged");
       user_info = user_info.split(",");
       var new_pass = $('#edit_password').val();
       var old_user = getCookie(user_info[0]);
       old_user = old_user.split(',');
-      var new_cookie = old_user[0] + "," + new_pass;
+      var new_cookie = old_user[0] + "," + new_pass + ","+ old_user[2] + "," + old_user[3];
       if(confirm("Do you want to change your email?")){
         setCookie(user_info[0], new_cookie);
-        $('#edit_password').val() = "";
+        $('#edit_password').val('');
       }
     });
 
+    $("#change_pic_btn").change(function(){
+       previewProfilePic(this);
+   });
+
+   $("#change_banner_btn").change(function(){
+       previewBanner(this);
+   });
+
+    $("#submit_pic").click("click", function(){
+      var user = getCookie("userlogged");
+      user = user.split(',');
+      user = user[0];
+      var old_cookie = getCookie(user);
+      old_cookie = old_cookie.split(',');
+      var new_pic = document.getElementById("change_pic_btn").files[0].name;
+      var new_cookie = old_cookie[0] + "," + old_cookie[1] + ","+ new_pic + "," + old_cookie[3];
+      if(confirm("Do you want to change your profile pic?")){
+        setCookie(user, new_cookie);
+        $('#profile_picture').attr('src',"./images/" + new_pic);
+        $('#change_pic_btn').val('');
+      }
+      else{
+        $('#change_pic_btn').val('');
+        $('#edit_profile_pic').attr('src', "./images/" + old_cookie[2]);
+      }
+    });
+
+    $("#submit_banner").click("click", function(){
+      var user = getCookie("userlogged");
+      user = user.split(',');
+      user = user[0];
+      var old_cookie = getCookie(user);
+      old_cookie = old_cookie.split(',');
+      var new_banner = document.getElementById("change_banner_btn").files[0].name;
+      var new_cookie = old_cookie[0] + "," + old_cookie[1] + ","+ old_cookie[2] + "," + new_banner;
+      if(confirm("Do you want to change your banner pic?")){
+        setCookie(user, new_cookie);
+        $('#banner_image').attr('src',"./images/" + new_banner);
+        $('#change_banner_btn').val('');
+      }
+      else{
+        $('#change_banner_btn').val('');
+        alert(old_cookie[3]);
+        $('#edit_banner').attr('src', "./images/" + old_cookie[3]);
+      }
+    });
+
+    $("#my_collections_btn").click(function(e){
+       e.preventDefault();
+       window.location.href= 'collections.html';
+
+    });
+
+    $("#my_collections_btn_tablet").click(function(e){
+       e.preventDefault();
+       window.location.href= 'collections.html';
+
+    });
+
     // MY PROFILE SECTION ENDS
+
+
+
+    // MY COLLECTIONS SECTIONS
+    $("#addcollection_btn").click(function(e){
+        e.preventDefault();
+        $("#overlay").fadeIn();
+        $("#profile_form_container").css("display", "flex");
+        $("#add_collection_form").css("display", "flex");
+        $("body").css("overflow-y", "hidden");
+        if (getCookie("scroll") == "open"){
+          $("#side_menu").animate({width:'toggle'},350);
+          setCookie("scroll", "close");
+        }
+
+    });
+
+
+    $("#add_collection_form").submit(function(e){
+        e.preventDefault();
+        var user_info = getCookie("userlogged");
+        user_info = user_info.split(",");
+        var cname = user_info[1];
+        var prevValue = getCookie(cname);
+        var collection_title = document.getElementById("new_title_col").value;
+        var cvalue = prevValue + "(" + collection_title + "/" + "banner.jpg" + "/" + "banner2.jpg" + "/" + "banner3.jpg" + "/" + "banner4.jfif" + "),";
+        var new_collection = document.createElement("div");
+        setCookie(cname, cvalue);
+        new_collection.classList.add('profile_collections');
+
+        var collection_container = document.createElement("div");
+        collection_container.classList.add("collection");
+        var first_half = document.createElement("div");
+        first_half.classList.add("first_half");
+        var photo1 = document.createElement("div");
+        photo1.classList.add("photo1_col");
+        var image1 = document.createElement("img");
+        image1.src = "./images/banner.jpg";
+        var photo2 = document.createElement("div");
+        photo2.classList.add("photo2_col");
+        var image2 = document.createElement("img");
+        image2.src = "./images/banner2.jpg";
+        photo2.appendChild(image2);
+        photo1.appendChild(image1);
+        first_half.appendChild(photo1);
+        first_half.appendChild(photo2);
+
+        var second_half = document.createElement("div");
+        second_half.classList.add("second_half");
+        var photo3 = document.createElement("div");
+        photo3.classList.add("photo3_col");
+        var image3 = document.createElement("img");
+        image3.src = "./images/banner3.jpg";
+        var photo4 = document.createElement("div");
+        photo4.classList.add("photo4_col");
+        var image4 = document.createElement("img");
+        image4.src = "./images/banner4.jfif";
+        photo3.appendChild(image3);
+        photo4.appendChild(image4);
+        second_half.appendChild(photo3);
+        second_half.appendChild(photo4);
+
+        collection_container.appendChild(first_half);
+        collection_container.appendChild(second_half);
+
+        var col_title = document.createElement("h3");
+        col_title.classList.add("title_col");
+        col_title.innerText = collection_title;
+
+        new_collection.appendChild(collection_container);
+        new_collection.appendChild(col_title);
+
+        document.getElementById("collections_container").prepend(new_collection);
+
+        $("#add_collection_form").css("display", "none");
+        $("body").css("overflow-y", "scroll");
+        setCookie("scroll", "close");
+        $("#overlay").fadeOut();
+        document.getElementById('add_collection_form').reset();
+
+    });
+
+    $("#add_collection-close").click(function(e){
+        document.getElementById('add_collection_form').reset();
+    });
+    // MY COLLECTIONS SECTIONS END
 
 });
 
@@ -897,4 +1105,28 @@ function checkLogged(){
   }else{
     return false;
   }
+}
+
+function previewProfilePic(input) {
+       if (input.files && input.files[0]) {
+           var reader = new FileReader();
+
+           reader.onload = function (e) {
+               $('#edit_profile_pic').attr('src', e.target.result);
+           }
+
+           reader.readAsDataURL(input.files[0]);
+       }
+}
+
+function previewBanner(input) {
+       if (input.files && input.files[0]) {
+           var reader = new FileReader();
+
+           reader.onload = function (e) {
+               $('#edit_banner').attr('src', e.target.result);
+           }
+
+           reader.readAsDataURL(input.files[0]);
+       }
 }

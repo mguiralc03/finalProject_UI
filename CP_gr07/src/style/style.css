@@ -151,7 +151,7 @@ html{
 
 .li_form_container{
   height:80%;
-  display:flex;
+  display:none;
   align-items: center;
 }
 
@@ -678,6 +678,12 @@ input[type=range]::-moz-range-thumb {
   z-index: 5;
 }
 
+#profile_form_container{
+    display: flex;
+    position: relative;
+    z-index: 5;
+}
+
 #mp_login_pu{
   display: none;
 }
@@ -686,7 +692,60 @@ input[type=range]::-moz-range-thumb {
   display:none;
 }
 
-.add_experience{
+#add_collection_form .form_textbox{
+    text-align: center;
+}
+
+/* MIGUEL HACIENDOLO, QUITAR CUANDO SE META EL POPUPS
+EDITADO YA COMPLETO */
+#edit_profile{
+    display: none;
+    width: 80%;
+}
+
+#add_collection_form{
+    display: none;
+    width: 30%;
+}
+
+#addcollection_btn{
+    cursor: pointer;
+}
+
+.delete_btn_col{
+    all: unset;
+    color: white;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.57);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.open_btn_col{
+    all: unset;
+    color: white;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.57);
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.overlay_col{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    justify-content: center;
+    padding: 5px;
+}
+
+.add_experience_form{
   background: rgba(245, 225, 185);
   position: fixed;
   top: 50%;
@@ -697,16 +756,14 @@ input[type=range]::-moz-range-thumb {
   vertical-align: middle;
   margin:auto;
   display: none;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 40%;
   max-height: 80%;
   padding: 20px;
   justify-content: center;
   text-align: center;
 }
-
-
 
 .experience{
   background: rgba(245, 225, 185);
@@ -1047,7 +1104,7 @@ input[type=range]::-moz-range-thumb {
     height: 17%;
 }
 
-#profile_banner img{
+#banner_image{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1072,9 +1129,9 @@ input[type=range]::-moz-range-thumb {
 
 #profile_img_div img{
     border-radius: 100px;
-    min-height: 50px;
-    min-width: 50px;
-    max-width: 100px;
+    /* min-height: 50px;
+    min-width: 50px; */
+    max-width: 200px;
     object-fit: cover;
     border: 3px solid white;
 }
@@ -1150,46 +1207,270 @@ input[type=range]::-moz-range-thumb {
     display: none;
 }
 
-.edit_info{
-  display:flex;
-  flex-wrap: wrap;
-  /* justify-content: center;  */
+#publications_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.edit_info img{
-  min-height: 80px;
-  max-height: 80px;
-  width: 80px;
-  min-width: 100px;
-  border-radius: 50%;
+.publication_image{
   object-fit: cover;
+  object-position: center;
+}
+
+#profile_images{
+    text-align: center;
+    margin-top: 20%;
+}
+
+/* ----- EDIT PROFILE SECTION BEGINS ----- */
+
+#change_username_btn, #change_mail_btn, #change_pass_btn,
+#submit_banner, #submit_pic{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#edit_profile h3{
+  width: 100%;
+  margin-left: 20px;
 }
 
 #edit_pf_header{
-  border-bottom: 2px black;
+  border-bottom: 2px solid grey;
+  width:100%;
+  text-align: center;
 }
 
-
-
-.change_banner_btn{ /*On hover display this button*/
-  display:none
-}
-
-.change_banner{
+.edit_info{
   display:flex;
+  flex-wrap: wrap;
   align-items: center;
+  position:relative;
+}
+
+
+.edit_info:hover #edit_profile_pic{
+  opacity: 0.5;
+}
+
+.edit_info:hover .banner_middle {
+  opacity: 1;
+}
+
+#edit_profile_pic{
+  min-height: 120px;
+  max-height: 80px;
+  min-width: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 1;
+  display: block;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+#submit_pic{
+  float:right;
+  margin-top: 10px;
+}
+
+
+.custom_file_upload_pic{
+  border: 1px solid #ccc;
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.custom_file_upload_pic:hover{
+  font-weight: bold;
+}
+
+#profile_form_container{
+  display: none;
+  position: relative;
+  z-index: 5;
+}
+
+#edit_profile{
+  width:400px;
+  height:80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom_file_upload_banner {
+    color:white;
+    padding: 6px 12px;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background-color: #101010;
+    border: 1px solid #89898a;
+    border-radius: 7px;
+}
+
+.custom_file_upload_banner:hover{
+  font-weight: bold;
+}
+
+.banner_container {
+  position: relative;
+  width: 80%;
+}
+
+#edit_banner {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.banner_middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.banner_container:hover #edit_banner {
+  opacity: 0.5;
+}
+
+.banner_container:hover .banner_middle {
+  opacity: 1;
+}
+
+.submit_banner_container{
+  margin-top: 10px;
+  display:flex;
+  width: 100%;
   justify-content: center;
-  background: url("../images/coverMountain.jpeg") no-repeat;
-  background-size: cover;
-  width:80%;
 }
 
-.change_banner:hover{
-  -webkit-filter: brightness(70%);
+/* EDIT PROFILE SECTION ENDS */
+
+/* MY COLLECTIONS SECTION STARTS */
+
+.collections_container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
+.profile_collections{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    position: relative;
+    float: left;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-/* MY PROFILE SECTION ENDS */
+.add_btn_col{
+    display: flex;
+    margin: 15px;
+    width: 30%;
+    height: 250px;
+    justify-content: center;
+}
+
+.title_col{
+    text-align: center;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.collection{
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    padding: 2px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.first_half{
+    width: 50%;
+}
+
+.second_half{
+    width: 50%;
+}
+
+.photo1_col{
+    width: 100%;
+    height: 62px;
+}
+.photo1_col img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 8px;
+}
+.photo2_col{
+    width: 100%;
+    height: 187px;
+}
+.photo2_col img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+}
+.photo3_col{
+    width: 100%;
+    height: 187px;
+}
+.photo3_col img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 8px;
+}
+.photo4_col{
+    width: 100%;
+    height: 62px;
+}
+.photo4_col img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: 8px;
+}
+
+.fa-plus-circle{
+    margin: 0;
+    align-self: center;
+}
+
+/* MY COLLECTIONS SECTION ENDS */
 
 /* Footer style */
 footer{
@@ -1556,6 +1837,38 @@ footer{
     .comment_input{
         width: 70%;
     }
+
+    .add_experience_form{
+        width: 60%;
+    }
+
+    .collection{
+        width: 200px;
+        height: 200px;
+    }
+
+    .photo1_col{
+        height: 50px;
+    }
+
+    .photo2_col{
+        height: 150px;
+    }
+
+    .photo3_col{
+        height: 150px;
+    }
+    .photo4_col{
+        height: 50px;
+    }
+
+    .add_btn_col{
+        height: 200px;
+    }
+
+    #add_collection_form{
+        width: 40%;
+    }
 }
 
 @media  only screen and (max-width: 800px){
@@ -1599,6 +1912,10 @@ footer{
       max-width: 80px;
     }
 
+    #add_collection_form{
+        width: 60%;
+    }
+
 }
 
 @media  only screen and (max-width: 700px){
@@ -1607,6 +1924,34 @@ footer{
     }
     input[type="range"]::-moz-range-track {
         width: 200px;
+    }
+
+    .add_experience_form{
+        width: 60%;
+    }
+
+    .collection{
+        width: 150px;
+        height: 150px;
+    }
+
+    .photo1_col{
+        height: 37px;
+    }
+
+    .photo2_col{
+        height: 112px;
+    }
+
+    .photo3_col{
+        height: 112px;
+    }
+    .photo4_col{
+        height: 37px;
+    }
+
+    .add_btn_col{
+        height: 150px;
     }
 
 }
@@ -1756,6 +2101,23 @@ footer{
         display: none;
     }
 
+    .add_experience_form{
+        overflow-y: scroll;
+        width: 72%;
+    }
+
+    .profile_collections{
+        width: 43%;
+    }
+
+    .add_btn_col{
+        width: 43%;
+    }
+
+    #add_collection_form{
+        width: 80%;
+    }
+
     .experience{
         display: none;
         overflow-y: scroll;
@@ -1794,6 +2156,13 @@ footer{
         display: none;
     }
 
+    #profile_banner{
+        height: 15%;
+    }
+
+    #info_container{
+        top: -1%;
+    }
 
     #settings_mobile{
         display: flex;

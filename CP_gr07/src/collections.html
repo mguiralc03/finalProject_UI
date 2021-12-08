@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>My Profile</title>
+        <title>My collections</title>
         <link rel="stylesheet" href="./style/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
@@ -79,7 +79,7 @@
               </div>
               <div class = "profile_container">
                   <div id = "profile_banner">
-                      <img id="banner_image"src = #>
+                      <img id="banner_image" src = #>
                   </div>
                   <div id = "info_container" >
                     <div id = "profile_general_info">
@@ -111,52 +111,18 @@
                                 <a class="fa fa-calendar" ></a>
                                 <p id = "joined_text">Joined 11/01/2001</p>
                             </div>
-                            <div id = "my_collections">
-                                <button class = "profile_btn" id = "my_collections_btn">My Collections</button>
-                            </div>
-                            <div id = "add_experience">
-                                <button class = "profile_btn" id = "add_experience_btn">Add new experience</button>
-                            </div>
-                            <div id = "settings">
-                                <i class="fa fa-cog fa-2x "></i>
-                            </div>
-                            <div id = "settings_mobile">
-                                <i class="fa fa-cog fa-lg "></i>
-                            </div>
-                            <div id = "mp_tablet_btns">
-                              <div id = "add_experience_tablet">
-                                  <button class = "profile_btn" id = "add_experience_btn_tablet">Add new experience</button>
-                              </div>
-                              <div id = "my_collections_tablet">
-                                  <button class = "profile_btn" id = "my_collections_btn_tablet">My Collections</button>
-                              </div>
-                            </div>
                         </div>
                       </div>
                   </div>
-                  <div id = "publications_container">
-                      <!-- <h3>"Share your experiences so other people can see them."</h3> -->
-                      <div class = "gallery">
-                          <img class = "publication_image" src="./images/desierto.jpg" alt="Vermilion Cliffs">
-                      </div>
-                      <div class = "gallery">
-                          <img class = "publication_image" src="./images/molino.jpg" alt="Vermilion Cliffs">
-                      </div>
-                      <div class = "gallery">
-                          <img class = "publication_image" src="./images/autumwalk_home.jpg" alt="Vermilion Cliffs">
-                      </div>
-                      <div class = "gallery">
-                          <img class = "publication_image" src="./images/mountain_home.jpg" alt="Vermilion Cliffs">
-                      </div>
-                      <div class = "gallery">
-                          <img class = "publication_image" src="./images/cascada.jpg" alt="Vermilion Cliffs">
+                  <div id = "collections_container">
+                      <div class = "add_btn_col">
+                          <i class="fa fa-plus-circle fa-3x" id = "addcollection_btn"></i>
                       </div>
                   </div>
               </div>
               <div class = "margin">
 
               </div>
-              <!-- EDIT PROFILE SECTION BEGINS -->
               <div class= "li_form_container" id = "profile_form_container">
                 <div class="pu_forms" id = "edit_profile">
                   <div id="edit_pf_header">
@@ -208,32 +174,12 @@
                     <input class = "submit_btn" id = "change_pass_btn" type= "submit" value= "Change">
                   </div>
                 </div>
-              </div>
 
-              <!-- EDIT PROFILE ENDS -->
-
-                <!--ADD EXPERIENCE POPUP-->
-                <form class = "add_experience_form" id = "addexp_form" method="post">
-                  <button class = "close_btn" id = "exp-close">&times;</button>
-                  <h2>Tell us about your experience</h2>
-                  <div id = "add_image">
-                      <input type = "file" id = "new_exp_photo" name = "image" accept="image/*">
-                  </div>
-
-                  <div class="description_container">
-                    <input class = "form_textbox" type = "text" id = "exp_input_title" placeholder = "Add a title" maxlength = "20" required>
-                    <input class = "form_textbox" type = "text" id = "exp_input_place" placeholder = "Add a location" maxlength = "20" required>
-                    <input class = "form_textbox" type = "text" id = "exp_input_budget" placeholder = "Add a budget" maxlength = "5" required>
-                    <input class = "form_textbox" type = "text" id = "exp_input_tags" placeholder = "Add tags">
-                    <input class = "form_textbox" type = "text" id = "exp_input_collaborator" placeholder = "Add collaborator">
-                    <textarea class = "form_textbox" type = "text" id = "exp_input_description" placeholder = "Add a description" cols = "18" rows = "8" maxlength = "200" required></textarea>
-                  </div>
-                  <div class = "sub_del">
-                      <input class = "submit_btn" type = "submit" id = "submit_btn_exp" value = "Submit">
-                      <input class = "submit_btn" id = "delete_btn_exp" type = "reset" value = "Delete">
-                  </div>
+                <form class="pu_forms" id = "add_collection_form" method = "post">
+                    <button class = "close_btn" id = "add_collection-close">&times;</button>
+                    <input class = "form_textbox" id = "new_title_col" type="text" placeholder= "New collection name"></input>
+                    <button id = "sub_col" type = "submit" class = "submit_btn" >Submit</button>
                 </form>
-                <!--ADD EXPERIENCE POPUP END-->
 
               </div>
             </div>
