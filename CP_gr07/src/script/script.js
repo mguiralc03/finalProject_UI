@@ -388,6 +388,11 @@ $(document).ready(function(){
             setCookie("scroll", "close");
         }
     });
+
+    $("#myprofile").click(function(e){
+        e.preventDefault();
+        window.location.href = 'profile.html';
+    });
 // SIGNUP AND LOGIN POPUPS WITHIN MAIN PAGE
     $("#su_option").click(function(e){
         e.preventDefault();
