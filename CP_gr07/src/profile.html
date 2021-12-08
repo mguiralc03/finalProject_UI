@@ -16,7 +16,7 @@
                 <div id = "links_header_section">
                     <a class = "links_header" id = "link_AboutUs_prof" href = "">ABOUT US</a>
                     <a class = "links_header" id = "link_Home_prof" href = "./index.html">HOME</a>
-                    <a class = "links_header" id = "link_Rankings_prof" href = "./rankings.html">RANKINGS</a>
+                    <a class = "links_header" id = "link_Rankings_prof">RANKINGS</a>
                     <div id = "icons_profile">
                       <i class = "fa fa-home fa-lg" id = "home_icon_profile"></i>
                       <span class = "material-icons-outlined" id = "icon_rankings">leaderboard</span>
@@ -73,31 +73,26 @@
                   </div>
               </div>
               <!--Side menu END-->
-
-              <div class = "margin">
-
-              </div>
-              <div class = "profile_container">
                   <div id = "profile_banner">
-                      <img id="banner_image"src = #>
+                      <img id="banner_image" src = #>
                   </div>
                   <div id = "info_container" >
                     <div id = "profile_general_info">
                         <div id = "profile_img_div">
-                            <img id = "profile_picture" src = #>
+                            <img id = "profile_picture"src = #>
                         </div>
                         <div id = "profile_desc">
-                          <h2 id = "puser"></h2>
+                          <h2 id = "puser">@user</h2>
                         </div>
                     </div>
                     <div id = "profile_detailed_info">
                         <div id = "stats">
                             <div id = followers_div>
-                                <h2 id = "fnumber">1.3M</h2>
+                                <h2 id = "fnumber">0</h2>
                                 <h2 id = "ftext">Followers</h2>
                             </div>
                             <div id = "posts_div">
-                                <h2 id = "posts_number">137</h2>
+                                <h2 id = "posts_number">0</h2>
                                 <h2 id = "posts_text">Posts</h2>
                             </div>
                         </div>
@@ -112,10 +107,10 @@
                                 <p id = "joined_text">Joined 11/01/2001</p>
                             </div>
                             <div id = "my_collections">
-                                <button class = "profile_btn" id = "my_collections_btn">My Collections</button>
+                                <button class = "profile_btn" id = my_collections_btn>My Collections</button>
                             </div>
                             <div id = "add_experience">
-                                <button class = "profile_btn" id = "add_experience_btn">Add new experience</button>
+                                <button class = "profile_btn" id = add_experience_btn>Add new experience</button>
                             </div>
                             <div id = "settings">
                                 <i class="fa fa-cog fa-2x "></i>
@@ -134,14 +129,14 @@
                         </div>
                       </div>
                   </div>
-                  <div id = "publications_container">
-                      <!-- <h3>"Share your experiences so other people can see them."</h3> -->
-                      <div class = "gallery">
-                          <img class = "publication_image" src="./images/desierto.jpg" alt="Vermilion Cliffs">
-                      </div>
+              <div id = "posts_container">
+                  <div id = "profile_images">
+                    <!-- <div class="user_experiences cliff" value = "2000">
+                        <a target="_blank">
+                          <img id = "cliff_image" src="" alt="Vermilion Cliffs" width="100" height="150">
+                        </a>
+                    </div> -->
                   </div>
-              </div>
-              <div class = "margin">
               </div>
               <!-- EDIT PROFILE SECTION BEGINS -->
               <div class= "li_form_container" id = "profile_form_container">
@@ -195,9 +190,7 @@
                     <input class = "submit_btn" id = "change_pass_btn" type= "submit" value= "Change">
                   </div>
                 </div>
-              </div>
 
-              <!-- EDIT PROFILE ENDS -->
 
                 <!--ADD EXPERIENCE POPUP-->
                 <form class = "add_experience_form" id = "addexp_form" method="post">
@@ -206,7 +199,6 @@
                   <div id = "add_image">
                       <input type = "file" id = "new_exp_photo" name = "image" accept="image/*">
                   </div>
-
                   <div class="description_container">
                     <input class = "form_textbox" type = "text" id = "exp_input_title" placeholder = "Add a title" maxlength = "20" required>
                     <input class = "form_textbox" type = "text" id = "exp_input_place" placeholder = "Add a location" maxlength = "20" required>
@@ -222,13 +214,55 @@
                 </form>
                 <!--ADD EXPERIENCE POPUP END-->
 
+                <!-- EXPERIENCE POPUP DISPLAY -->
+
+                <!-- <div class = "experience" id = "experience_data">
+                    <button class = "close_btn" id = "exp-close">&times;</button>
+                    <img class = "author" id = post_author_img alt="user1">
+                    <p class = "author_tag" id = post_author_tag></p>
+                    <div class = "photo_container">
+                        <img id = post_img>
+                        <div class = "icons">
+                          <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
+                          <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
+                          <div class= "space_between"></div>
+                          <i class="fa fa-share-alt fa-lg"></i>
+                          <a class="material-icons-outlined" id = "bookmark_exp1">bookmark_border</a>
+                          <a class="material-icons-outlined" id = "filled_bookmark_exp1">bookmark</a>
+                        </div>
+                    </div>
+                    <div class="description_container">
+                      <p class = "description_titles" id = post_title><b>Title:</b></h1>
+                      <p class = "description_titles" id = post_place><b>Place:</b></h1>
+                      <p class = "description_titles" id = post_budget><b>Budget:</b></h1>
+                      <p class = "description_titles"><b>Description:</b></h1>
+                      <p id = post_desc></p>
+                    </div>
+                    <div class="comments">
+                      <h1 class = "description_titles">Comments:</h1>
+                      <div class="comments_box">
+                          <div class = "user_comment1">
+                            <img src="./images/user_2.jpg" alt="user2">
+                            <p class = "comment_description"><b>user2</b> What a nice plan for doing with family</p>
+                          </div>
+                  </div> -->
+
+                <!-- EXPERIENCE POPUP DISPLAY ENDS -->
+
               </div>
+
+              <!-- EDIT PROFILE ENDS -->
+
+              <div id = "publications_container">
+              </div>
+
             </div>
+
 
             <footer>
                 <div id = "links_footer_div">
-                    <a class = "links_footer" id = "link_T&C" href = "terms&cond.html">Terms and conditions</a>
-                    <a class = "links_footer" id = "link_privacy" href = "privatepolicy.html">Policy of privacy</a>
+                    <a class = "links_footer" id = "link_T&C" href = "">Terms and conditions</a>
+                    <a class = "links_footer" id = "link_privacy" href = "">Policy of privacy</a>
                 </div>
                 <div id ='title_footer'>
                     <p id = text_footer > ONTRIP </p>
@@ -246,6 +280,7 @@
             <script src="https://unpkg.com/image-map/dist/image-map.jquery.js"></script>
             <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
             <script src="./script/script.js"> </script>
+
             <script type="text/javascript">
               function getCookie(cname){
 

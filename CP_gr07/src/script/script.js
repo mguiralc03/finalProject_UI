@@ -482,6 +482,7 @@ $(document).ready(function(){
       }
     });
 
+
     $("#addexp_form").submit(function(e){
       e.preventDefault();
       var user_info = getCookie("userlogged");
@@ -497,8 +498,30 @@ $(document).ready(function(){
       var cvalue = exp_title + "," + exp_photo + "," + exp_place + "," + exp_budget + ","
       + exp_tags + "," + exp_collaborator + "," + exp_desc;
       setCookie(cname, cvalue);
+
+      var myDiv = document.createElement("div");
+      myDiv.classList.add("gallery");
+      var myImage = document.createElement("img");
+      myImage.src = "./images/" + exp_photo;
+      myImage.classList.add("publication_image");
+      myDiv.appendChild(myImage);
+      document.getElementById("publications_container").prepend(myDiv);
+      $("#addexp_form").each(function(){
+        this.reset();
+      });
+      $("#overlay").fadeOut();
+      $("#profile_form_container").fadeOut();
+      $("body").css("overflow-y", "scroll");
     });
 
+//Experiences poup in profile page
+    $("#publication_image").click(function(e){
+      e.preventDefault();
+      $("#profile_form_container").css("display", "flex");
+      $("#experience_data").css("display", "flex");
+      $("#overlay").fadeIn();
+      $("body").css("overflow-y", "hidden");
+    });
 
 // Experiences POPUPS in Main Page
     $('#cliff_image').click(function(e){
