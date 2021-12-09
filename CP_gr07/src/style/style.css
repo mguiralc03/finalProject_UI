@@ -745,6 +745,44 @@ EDITADO YA COMPLETO */
     padding: 5px;
 }
 
+.add_to_collection_form{
+    background: rgba(245, 225, 185);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 4px 4px 4px rgba(74, 77, 76, 0.91);
+    border-radius: 6px;
+    vertical-align: middle;
+    margin:auto;
+    display: none;
+    flex-direction: column;
+    width: 30%;
+    z-index: 7;
+    padding: 20px;
+}
+
+.add_to_collection_form .sub_add_to_col{
+    width: 20%;
+}
+
+.add_to_collection_form section{
+    width: 20%;
+}
+
+#add_to_collection-close{
+  all: unset;
+  cursor: pointer;
+  font-family: fantasy;
+  position: absolute;
+  right: 0;
+  top: 1px;
+  font-stretch: extra-expanded;
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 15px;
+}
+
 .add_experience_form{
   background: rgba(245, 225, 185);
   position: fixed;
@@ -812,6 +850,10 @@ EDITADO YA COMPLETO */
   width: 67%;
 }
 
+.description_container p{
+  padding-left: 20px;
+}
+
 .photo_container img{
     max-width: 100%;
     max-height: 350px;
@@ -836,10 +878,16 @@ EDITADO YA COMPLETO */
     font-family: "Raleway";
 }
 
-.icons #like_exp1, #bookmark_exp1, .fa-share-alt{
+.icons #like_exp1, #bookmark_exp1, #like_exp2, #like_exp3, #like_exp4,
+#like_exp5, #like_exp6, #like_exp7, #like_exp8, #like_exp9, #like_exp10,
+#bookmark_exp2, #bookmark_exp3, #bookmark_exp4, #bookmark_exp5, #bookmark_exp6,
+ #bookmark_exp7, #bookmark_exp8, #bookmark_exp9, #bookmark_exp10, .fa-share-alt{
     cursor: pointer;
 }
-.icons #filled_like_exp1, #filled_bookmark_exp1{
+.icons #filled_like_exp1, #filled_bookmark_exp1, #filled_like_exp2, #filled_like_exp3, #filled_like_exp4,
+#filled_like_exp5, #filled_like_exp6, #filled_like_exp7, #filled_like_exp8, #filled_like_exp9, #filled_like_exp10,
+#filled_bookmark_exp2, #filled_bookmark_exp3, #filled_bookmark_exp4, #filled_bookmark_exp5, #filled_bookmark_exp6,
+ #filled_bookmark_exp7, #filled_bookmark_exp8, #filled_bookmark_exp9, #filled_bookmark_exp10{
   display:none;
   cursor: pointer;
 }
@@ -973,6 +1021,22 @@ EDITADO YA COMPLETO */
     width: 16%;
     justify-content: center;
     align-items: center;
+}
+
+.my_profile_experiences{
+  margin: 15px;
+  position:relative;
+}
+
+.my_profile_experiences img{
+  height: 240px;
+  width:230px;
+  object-fit: cover;
+}
+
+.my_profile_experiences img:hover{
+  transform:scale(1.05);
+  cursor: pointer;
 }
 
 .tags{
@@ -1208,11 +1272,11 @@ EDITADO YA COMPLETO */
 }
 
 #publications_container{
-    width: 100%;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     position: relative;
+    transition: 0.3s;
 }
 
 .publication_image{
@@ -1368,6 +1432,29 @@ EDITADO YA COMPLETO */
 
 /* EDIT PROFILE SECTION ENDS */
 
+/* MY PROFILE EXPERIENCES POPUP BEGINS */
+#profile_exp_popup{
+  display:none;
+  z-index: 3;
+  width: 55%;
+}
+
+.edit_experience{
+  position:absolute;
+  top:5px;
+  right:5px;
+  border-radius: 20px;
+  background-color: grey;
+  color: black;
+  text-align: center;
+
+}
+
+.edit_experience:hover{
+  cursor:pointer;
+}
+/* MY PROFILE EXPERIENCES POPUP ENDS */
+
 /* MY COLLECTIONS SECTION STARTS */
 
 .collections_container{
@@ -1380,6 +1467,23 @@ EDITADO YA COMPLETO */
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+}
+
+.delete_collection{
+    border-color: rgb(153, 136, 121);
+    color: white;
+    background: rgb(153, 136, 121);
+    font-weight: bold;
+    border-style: solid;
+    height: 35px;
+    align-self: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
 }
 
 .profile_collections{
@@ -1821,6 +1925,9 @@ footer{
 
 @media  only screen and (max-width: 1000px){
 
+    #profile_exp_popup{
+      width:80%;
+    }
     .gallery{
         width: 28%;
     }
@@ -1966,6 +2073,10 @@ footer{
 
     .gallery img{
         height: 400px;
+    }
+
+    #publications_container{
+      justify-content: center;
     }
 
     #link_AboutUs_rank{
@@ -2131,6 +2242,11 @@ footer{
 
     .description_container{
         width: 100%;
+    }
+
+    .description_container p{
+      padding:0;
+      text-align: center;
     }
 
     .comments{

@@ -216,12 +216,10 @@
 
                 <!-- EXPERIENCE POPUP DISPLAY -->
 
-                <!-- <div class = "experience" id = "experience_data">
+                <div class = "experience" id = "profile_exp_popup">
                     <button class = "close_btn" id = "exp-close">&times;</button>
-                    <img class = "author" id = post_author_img alt="user1">
-                    <p class = "author_tag" id = post_author_tag></p>
                     <div class = "photo_container">
-                        <img id = post_img>
+                        <img id = "myexperience_image" src=# alt="Experience Image">
                         <div class = "icons">
                           <a class="material-icons-outlined" id = "like_exp1">favorite_border</a>
                           <a class="material-icons-outlined" id = "filled_like_exp1">favorite</a>
@@ -232,11 +230,13 @@
                         </div>
                     </div>
                     <div class="description_container">
-                      <p class = "description_titles" id = post_title><b>Title:</b></h1>
-                      <p class = "description_titles" id = post_place><b>Place:</b></h1>
-                      <p class = "description_titles" id = post_budget><b>Budget:</b></h1>
-                      <p class = "description_titles"><b>Description:</b></h1>
-                      <p id = post_desc></p>
+                      <p class = "description_titles" id = "experience_title"></p>
+                      <p class = "description_titles" id = "experience_location"></p>
+                      <p class = "description_titles" id = "experience_collaborator"></p>
+                      <p class = "description_titles" id = "experience_budget"></p>
+                      <p class = "description_titles" id = "experience_tags"></p>
+                      <p class = "description_titles"><b>Description:</b></p>
+                      <p id = "experience_description"></p>
                     </div>
                     <div class="comments">
                       <h1 class = "description_titles">Comments:</h1>
@@ -245,7 +245,11 @@
                             <img src="./images/user_2.jpg" alt="user2">
                             <p class = "comment_description"><b>user2</b> What a nice plan for doing with family</p>
                           </div>
-                  </div> -->
+                      </div>
+                      <input class= "comment_input" type="text" placeholder="Add a comment...">
+                      <button class = "send_btn">SEND</button>
+                    </div>
+                </div>
 
                 <!-- EXPERIENCE POPUP DISPLAY ENDS -->
 
@@ -254,6 +258,7 @@
               <!-- EDIT PROFILE ENDS -->
 
               <div id = "publications_container">
+                
               </div>
 
             </div>
@@ -285,7 +290,6 @@
               function getCookie(cname){
 
                 let name = cname + "="; //this name var will allow us to get the value of our cookie
-                console.log("Cookie name is: " + name);
                 let decodedCookie = decodeURIComponent(document.cookie);
                 let cookie_array = decodedCookie.split(';'); //split the values in  document.cookie and store them in an array
                 for(let i = 0; i <cookie_array.length; i++) {

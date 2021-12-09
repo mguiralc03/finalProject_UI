@@ -232,6 +232,97 @@
               document.getElementById("edit_profile_pic").src = profile_pic;
               document.getElementById("edit_banner").src = banner;
 
+              function getCollections(email){
+                  var cookie = getCookie(email);
+                  if (cookie != ""){
+                      var collections_title = [];
+                      var collections_img1 = [];
+                      var collections_img2 = [];
+                      var collections_img3 = [];
+                      var collections_img4 = [];
+                      var collections = cookie.split(",");
+                      var length = collections.length;
+                      for (var i = 0; i < length; i++){
+                         if (collections[i] != ""){
+                            var aux = collections[i].split("|");
+                            collections_title[i] = aux[0];
+                            collections_img1[i] = aux[1];
+                            collections_img2[i] = aux[2];
+                            collections_img3[i] = aux[3];
+                            collections_img4[i] = aux[4];
+                         }
+                      }
+                      return [collections_title, collections_img1, collections_img2, collections_img3, collections_img4];
+                  }
+                  return false;
+              }
+
+              var user = getCookie("userlogged");
+              user = user.split(",");
+              var email = user[1];
+              var collections = getCollections(email);
+              var titles = collections[0];
+              var images1 = collections[1];
+              var images2 = collections[2];
+              var images3 = collections[3];
+              var images4 = collections[4];
+
+              for (var i = 0; i < titles.length; i++){
+                  var collection_title = titles[i];
+                  var new_collection = document.createElement("div");
+                  new_collection.classList.add('profile_collections');
+
+                  var collection_container = document.createElement("div");
+                  collection_container.classList.add("collection");
+                  var first_half = document.createElement("div");
+                  first_half.classList.add("first_half");
+                  var photo1 = document.createElement("div");
+                  photo1.classList.add("photo1_col");
+                  var image1 = document.createElement("img");
+                  image1.src = images1[i];
+                  var photo2 = document.createElement("div");
+                  photo2.classList.add("photo2_col");
+                  var image2 = document.createElement("img");
+                  image2.src = images2[i];
+                  photo2.appendChild(image2);
+                  photo1.appendChild(image1);
+                  first_half.appendChild(photo1);
+                  first_half.appendChild(photo2);
+
+                  var second_half = document.createElement("div");
+                  second_half.classList.add("second_half");
+                  var photo3 = document.createElement("div");
+                  photo3.classList.add("photo3_col");
+                  var image3 = document.createElement("img");
+                  image3.src = images3[i];
+                  var photo4 = document.createElement("div");
+                  photo4.classList.add("photo4_col");
+                  var image4 = document.createElement("img");
+                  image4.src = images4[i];
+                  photo3.appendChild(image3);
+                  photo4.appendChild(image4);
+                  second_half.appendChild(photo3);
+                  second_half.appendChild(photo4);
+
+                  var close_button = document.createElement("button");
+                  close_button.classList.add("delete_collection");
+                  close_button.innerHTML = "&times;";
+
+                  collection_container.appendChild(first_half);
+                  collection_container.appendChild(second_half);
+
+
+                  var col_title = document.createElement("h3");
+                  col_title.classList.add("title_col");
+                  col_title.innerText = collection_title;
+
+                  new_collection.appendChild(close_button);
+                  new_collection.appendChild(collection_container);
+                  new_collection.appendChild(col_title);
+
+                  document.getElementById("collections_container").prepend(new_collection);
+              }
+
             </script>
     </body>
 </html>
